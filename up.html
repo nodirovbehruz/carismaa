@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link rel="icon" href="/img-bronson/black-carizma.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <style>
+    
+    .cc-select.bootstrap-select .dropdown-menu li a {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+    .cc-pdp .cc-content-color-choice-sticky .cc-color-choice-overlay-sticky.cc-open{
+      display: none;
+    }
+    #exampleModalCenter{
+      background-color: rgba(156, 156, 156, 0.539);
+      z-index: 9999 !important;
+    }
+    .cc-add-to-wishlist-background{
+      display: none !important;
+    }
+    
+    .add-to-cart-btn{
+    padding: 10px;
+    color: #ffff;
+    background-color: black;
+    border-radius: 10px;
+}
+    .ot-sdk-container {
+      display: none !important;
+    }
+    .cc-sticky-add-to-cart.cc-open{
+      display: none !important;
+    }
+    .modal-backdrop.show {
+      display: none !important;
+    }
+    .cart-items{
+      list-style: none;
+
+    }
+    .popup-img{
+      width: 55px;
+    height: 71px;
+    }
+    .cart-items li{
+      display: flex;
+      gap: 20px;
+    }
+    @media only screen and (min-width: 320px) {
+      .azik{
+        transform: translateX(260px);
+        margin-top: -120px;
+        width: 50px;
+      }
+      .add-to-cart-btn {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+     color: #ffff;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .sent{
+    width: 130px;
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .price{
+    font-size: 14px;
+  }
+  .clear-cart-btn{
+    width: 130px;
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .item_name{
+    font-size: 18px;
+  }
+  .remove-item-btn{
+    padding: 3px;
+    margin-top: 25px;
+    margin-left: 5px;
+    width: 74px;
+    height: 35px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ff2b2b;
+    border-radius: 5px;
+  }
+  .modal-content{
+    margin-top: -100px;
+    border: none;
+  }
+  .group input{
+    width: 270px;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid;
+  }
+  .cart-total{
+    width: 411px;
+    font-size: 17px;
+    width: 160px;
+  }
+  .cart-items{
+    margin: 0;
+    padding: 0;
+  }
+}
+    @media only screen and (min-width: 375px) {
+      .azik{
+        transform: translateX(300px);
+        margin-top: -120px;
+        width: 60px;
+      }
+      .add-to-cart-btn {
+        margin-left: 40px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+     color: #ffff;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .sent{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .price{
+    font-size: 15px;
+  }
+  .clear-cart-btn{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .item_name{
+    font-size: 24px;
+  }
+  .remove-item-btn{
+    margin-top: 25px;
+    margin-left: 5px;
+    width: 74px;
+    height: 35px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ff2b2b;
+    border-radius: 5px;
+  }
+  .modal-content{
+    margin-top: -100px;
+    border: none;
+  }
+  .group input{
+    width: 324px;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid;
+  }
+  .cart-total{
+    width: 411px;
+    font-size: 17px;
+    width: 160px;
+  }
+  .cart-items{
+    margin: 0;
+    padding: 0;
+  }
+}
+    @media only screen and (min-width: 425px) {
+      .azik{
+        transform: translateX(340px);
+        margin-top: -120px;
+        width: 60px;
+      }
+      .add-to-cart-btn {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 405px;
+        height: 50px;
+        padding: 10px;
+     color: #ffff;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .sent{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .clear-cart-btn{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .remove-item-btn{
+    margin-top: 25px;
+    width: 77px;
+    height: 25px;
+    color: #fff;
+    background-color: #ff2b2b;
+    border-radius: 5px;
+  }
+  .modal-content{
+    margin-top: -100px;
+    border: none;
+  }
+  .group input{
+    width: 375px;
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid;
+  }
+  .cart-total{
+    width: 165px;
+    font-size: 17px;
+  }
+  .cart-items{
+    margin: 0;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cart-items{
+      overflow-y: scroll;
+    height: 131px;
+    }
+  .azik{
+        display: none;
+      }
+  .korzina{
+        margin-left: 250px;
+    margin-top: -106px;
+      }
+      .add-to-cart-btn {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 300px;
+        height: 50px;
+        padding: 10px;
+     color: #ffff;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .sent{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .price{
+    font-size: 22px;
+  }
+  .clear-cart-btn{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .remove-item-btn{
+    margin-top: 25px;
+    margin-left: 100px;
+    width: 74px;
+    height: 35px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ff2b2b;
+    border-radius: 5px;
+  }
+  .modal-content{
+    margin-top: -100px;
+    border: none;
+  }
+  .group input{
+    width: 465px;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid;
+  }
+  .cart-total{
+    width: 411px;
+    font-size: 17px;
+  }
+  .cart-items{
+    margin: 0;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cart-items{
+      overflow-y: scroll;
+    height: 131px;
+    }
+  .azik{
+        display: none;
+      }
+  .korzina{
+        margin-left: 340px;
+    margin-top: -106px;
+      }
+      .add-to-cart-btn {
+        margin-left: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 405px;
+        height: 50px;
+        padding: 10px;
+     color: #ffff;
+    background-color: black;
+    border-radius: 5px;
+  }
+  .sent{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .price{
+    font-size: 22px;
+  }
+  .clear-cart-btn{
+    color: white;
+    background-color: black;
+    padding: 7px;
+    border-radius: 5px;
+  }
+  .remove-item-btn{
+    margin-top: 25px;
+    margin-left: 100px;
+    width: 74px;
+    height: 35px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ff2b2b;
+    border-radius: 5px;
+  }
+  .modal-content{
+    margin-top: -10px;
+    border: none;
+  }
+  .group input{
+    width: 465px;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: 1px solid;
+  }
+  .cart-total{
+    width: 411px;
+    font-size: 17px;
+  }
+  .cart-items{
+    margin: 0;
+    padding: 0;
+  }
+}
+    @media only screen and (min-width: 1440px) {
+      .cart-items{
+      overflow-y: scroll;
+    height: 131px;
+    }
+      .azik{
+        display: none;
+      }
+      .korzina{
+        margin-left: 540px;
+    margin-top: -106px;
+      }
+      .add-to-cart-btn {
+        text-align: center;
+        width: 500px;
+        height: 50px;
+        padding: 10px;
+       color: #ffff;
+    background-color: black;
+  }
+}
+    .lil{
+      width: 30px !important;
+    }
+    #exampleModalCenter{
+      background-color: rgba(156, 156, 156, 0.539);
+      z-index: 9999 !important;
+    }
+    .uiButton no-hover helpButtonEnabled{
+      display: none !important ;
+    }
+    .embeddedServiceHelpButton .helpButton {
+      display: none !important;
+    }
+    .cart-icon{
+    display: flex;
+    margin-top: -39px;
+    margin-left: 15px;
+}
+@media only screen and (min-width: 425px) {
+    .camnd {
+        margin-left: 500px !important;
+      }
+}
+    @media only screen and (min-width: 768px) {
+    .camnd {
+        margin-left: 700px !important;
+      }
+      .cart-icon{
+        display: none;
+      }
+}
+    @media only screen and (min-width: 1023px) {
+    .camnd {
+        margin-left: 950px !important;
+      }
+      .cart-icon{
+        display: none;
+      }
+}
+    @media only screen and (min-width: 1438px) {
+    .camnd {
+        margin-left: 1300px !important;
+      }
+      .cart-icon{
+        display: none;
+      }
+}
+    @media only screen and (min-width: 2560px) {
+    .camnd {
+        margin-left: 2300px !important;
+        width: 50px;
+       
+      }
+      .cart-icon{
+        display: none;
+      }
+}
+  
+
+
+
+  </style>
+  <script>
+  </script>
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/global.js" as="script">
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/main.js" as="script">
+  <script defer type="text/javascript" src="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/global.js"></script>
+  <script defer type="text/javascript" src="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/main.js"></script>
+
+  <script defer type="text/javascript" src="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/listingPage.js">
+  </script>
+
+  <script defer type="text/javascript" src="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/search.js">
+  </script>
+
+  <script defer type="text/javascript" src="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/js/filterModalScripts.js">
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      // 'optin_sf': 'null',
+      'visitorShipping': 'CN',
+      'visitorCurrency': 'CNY',
+      'pageCategory': 'product-list',
+      'pagesubCategory': 'man',
+      'pageDetail': 'high_summer',
+      'pageLanguage': 'en',
+      'pageStatus': '200',
+      'listingType': 'grid3'
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var a = '<span class="hidden" style="display:none;">' + '<span class="visitorShipping hidden">CN</span><span class="visitorCurrency hidden">CNY</span>' + '<span class="pageCategory hidden">product-list</span>' + '<span class="pagesubCategory hidden">man</span>' + '<span class="pageDetail hidden">high_summer</span>' + '<span class="pageLanguage hidden">en</span><span class="pageStatus hidden">200</span>' + '<span class="login hidden lazyload"></span><span class="visitorId hidden lazyload"></span>' + '<span class="cartItemNumber hidden lazyload"></span>' + '</span>';
+      var foo = document.createDocumentFragment();
+      var item = document.createElement('span');
+      item.style.display = "none";;
+      item.innerHTML = a
+      foo.appendChild(item);
+      document.body.appendChild(foo);
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M3R7H8G');
+  </script>
+  <!--  End Google Tag Manager -->
+
+  <input type="hidden" class="js-update-cartItemNumber" name="analyticsUpdate" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Analytics-UserData" />
+
+  <script defer src="//player.polyv.net/script/player.js"></script>
+
+  <meta charset=UTF-8 />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title> Верхняя одежда</title>
+  <meta name="description" content="Наш первый шаг к нашей цели. Carisma представила свою коллекцию Primo летом 30.06.2023. “Primo”, что в переводе с итальянского означает “первый”, каким по счету он и является. Carisma - это более классический и кэжл стиль,предназначенный как и для мужского так и для женского пола. Carisma стремится передать эстетику моды 70-90х, когда в моде была строгость, без разноцветного образа в образе.">
+  <meta name="keywords" content=" Carisma classics, Primo, Carisma casual, Carisma">
+  <meta name="author" content="Carisma">
+
+  <link rel="icon" href="/on/demandware.static/Sites-bc-cn-Site/-/default/dwe62ece7e/images/favicon.ico" />
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/global.css" as="style">
+
+  <link rel="stylesheet" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/global.css" />
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/fonts.css" as="style">
+  <link rel="stylesheet" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/fonts.css" />
+
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/search.css" as="style">
+  <link rel="stylesheet" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/search.css" />
+
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/newsletterOverlay.css" as="style">
+  <link rel="stylesheet" href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/css/newsletterOverlay.css" />
+
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/default/dwa0fe115a/fonts/GTEesti/GTEestiProDisplay-Regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/default/dwdbd5b290/fonts/GTEesti/GTEestiProDisplay-Light.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/on/demandware.static/Sites-bc-cn-Site/-/default/dwfba22e33/fonts/GTEesti/GTEestiProDisplay-Medium.woff" as="font" crossorigin="anonymous">
+
+  <meta name="google-site-verification" content="-wqU98hF-H3_Igxbb9ZpdspakNTiYFWuqwBcH8RwGnM" />
+
+  <meta name="facebook-domain-verification" content="ho3asoin4cklij4qzj05vguumrz67e" />
+  <meta name="msvalidate.01" content="8674B57EA3ABCF8A1E526891C17F89FB" />
+  <meta name="yandex-verification" content="f34500f45e930a1a" />
+
+  <style>
+    .ot-sdk-container{
+        display: none;
+    }
+    @media (max-width: 1199.98px) {
+      .cc-navbar .cc-navbar-menu .cc-navbar-list .cc-navbar-item .cc-navbar-link:lang(ru) {
+        font-size: 0.625rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="page" data-action="Search-Show" data-querystring="cgid=man-high-summer&amp;x-dev=desktop">
+    <a class="sr-only" aria-hidden="true" tabindex="-1" id="cc-prevent-skipinmain-autofocus"></a>
+    <div role="navigation" aria-label="Skip link">
+      <a href="#maincontent" class="sr-only js-skipinmain">Go to main content</a>
+    </div>
+
+    <div class="cc-content-header">
+      <div class="js-lazyload-popUp" data-action-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Locale-Locale">
+      </div>
+      <header class="cc-header js-header sticky-for-a-while">
+        <div class="cc-top-header cc-no-mobile cc-clearfix">
+          <div class="cc-section-right">
+          </div>
+        </div>
+        <div class="cc-logo-container">
+          <div class="cc-content-logo">
+
+            <a class="cc-logo-link" href="index.html" data-cs-override-id="header-item-mob-logo">
+              <img class="cc-logo cc-logo-primary" src="/img-bronson/black-carizma.svg" alt="" />
+            </a>
+            <div class="cart-icon">
+              <button  type="button" class="btn " data-toggle="modal" data-target="#exampleModalCenter">
+                <img class="lil"  src="/img-carisma/bag-icon-remov.png" width="200px" alt="">
+              </button>
+             
+           </div>
+
+          </div>
+           
+          </div>
+
+        </div>
+        <div class="js-header-banner preload-gap">
+
+          
+
+          <div class="content-asset">
+            <!-- dwMarker="content" dwContentID="eecf09bed751949f016596c76e" -->
+            <style>
+              .js-banner-slider-fade {
+                max-height: 48px;
+              }
+              
+              .js-header-banner .js-banner-slider-fade {
+                width: 65%;
+              }
+              
+              .cc-shipment-banner {
+                font-weight: 300;
+              }
+              
+              .cc-page-header-fixed .cc-header .cc-shipment-banner a {
+                border-bottom: 1px solid #FFF;
+              }
+              
+              .cc-page-header-fixed .cc-header .cc-shipment-banner a:hover {
+                border-bottom-color: #FFF;
+                color: #FFF
+              }
+              
+              .cc-header .cc-shipment-banner a {
+                text-decoration: none;
+                padding-bottom: 3px;
+                border-bottom: 1px solid #262626;
+              }
+              
+              .cc-header .cc-shipment-banner a:hover {
+                border-bottom-color: #262626;
+              }
+              
+              .cc-header.cc-header-sticky .cc-shipment-banner a {
+                border-bottom-color: #262626;
+              }
+              
+              .cc-header.cc-header-sticky .cc-shipment-banner a:hover {
+                border-bottom-color: #262626;
+                color: #262626;
+              }
+              
+              @media only screen and (max-width: 1199.98px) {
+                .cc-header .cc-shipment-banner a {
+                  border-bottom-color: #262626 !important;
+                }
+                .js-header-banner .js-banner-slider-fade {
+                  width: 95%;
+                }
+              }
+              
+              @media only screen and (max-width: 767.98px) {
+                .js-banner-slider-fade {
+                  max-height: 56px;
+                }
+                .slick-track {
+                  display: flex;
+                }
+                .slick-slide {
+                  margin: auto 0;
+                }
+                .cc-header .cc-shipment-banner a {
+                  padding-bottom: 1px;
+                }
+                .js-header-banner .js-banner-slider-fade .cc-shipment-banner {
+                  width: 90%;
+                }
+                .js-header-banner .js-banner-slider-fade .slick-arrow.cc-slider-next {
+                  padding-right: 0;
+                }
+                .js-header-banner .js-banner-slider-fade .slick-arrow.cc-slider-prev {
+                  padding-left: 0;
+                }
+              }
+            </style>
+          </div>
+          <!-- End content-asset -->
+
+        </div>
+
+      </header>
+    </div>
+
+    <div id="js-login-registration-modal" class="cc-login-registration-offcanvas">
+      <div class="cc-off-canvas-outside js-loginregistration-closeBy-overlay"></div>
+
+      <div id="js-loginregistration-overlay" class="cc-loginregistration-overlay">
+        <div class="cc-login-box-container">
+          <div class="cc-header-container">
+            <div class="cc-title-text cc-login-box js-title-offcanvas" data-loginform="Log in" data-resetpwdform="Modify password">
+              Log in
+            </div>
+            <button class="cc-close-icon-container js-close-loginRegistration-offCanvas js-return-toLogin" aria-label="close" data-cs-override-id="login-overlay-close">
+              <svg class="cc-close-icon" aria-hidden="true" focusable="false">
+                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#close-light-black"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="js-login-form">
+
+          </div>
+          <div class="js-resetpwd-form">
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div role="main" id="maincontent" tabindex="-1">
+      <p class="sr-only">
+        main content start
+      </p>
+      <div class="cc-analytics-impressions-block-scroll js-analytics-impressions-block-scroll"></div>
+      <div id="cart-placeholder" data-cartajax-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Cart-MiniCartSideAjax"></div>
+
+      <input type="hidden" id="js-is-search" value="false" />
+
+      <input type="hidden" class="add-to-cart-url" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Cart-AddProduct" />
+      <input type="hidden" id="wishlistContainsProductURL" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-ContainsProduct">
+
+      <div class="container full-page-plp search-results">
+
+        <input type="hidden" id="searchList" value="category-man-high_summer" />
+        <input type="hidden" id="searchUrl" value="man-high_summer" />
+        <input type="hidden" id="analytics-from" value="plp" />
+
+        <div class="product-breadcrumb">
+          <div class="cc-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <div class="cc-container">
+              <ol class="cc-breadcrumbs-list">
+
+                <li class="cc-breadcrumb-item">
+                  <a class="cc-breadcrumb-link js-update-with-template" href="/index.html">
+                            Домой
+                        </a>
+                </li>
+
+                <li class="cc-breadcrumb-item cc-breadcrumb-item-last">
+
+                  <div class="cc-breadcrumb-link cc-breadcrumb-link-not-navigable" aria-current="page">
+                    Верхняя одежда
+                  </div>
+
+                </li>
+
+                <li class="cc-breadcrumb-item cc-breadcrumb-item-last">
+                  <div class="camnd">
+                    <div class="cc-breadcrumb-link cc-breadcrumb-link-not-navigable" aria-current="page">
+                      <button type="button" class="btn " data-toggle="modal" data-target="#exampleModalCenter">
+                        <img src="/img-carisma/bag-icon-remov.png" alt="">
+                      </button>
+                    </div>
+                  </div>
+
+                </li>
+
+              </ol>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="tab-content col-12">
+            <div class="tab-pane container full-page-plp active" id="product-search-results">
+
+            
+
+ 
+
+              <div class="separator-line-mainpage"></div>
+
+              <div class="row filter-bar">
+                <ul>
+
+                </ul>
+
+              </div>
+              <div class="row cc-row-filter-modal cc-pos-relative">
+                <div id="filter-modal-plp" class="filter-product-modal col">
+
+                  <div class="mainFilterContainer">
+                    <div class="active-filter-tab">
+                      <div class="filter-tab-name">FILTER BY:</div>
+                      <button class="open-filterTab-icon ml-auto js-close-filter-plp">
+                        <span class="sr-only">Hide filters</span>
+                        <svg class="open-filterTab-icon ml-auto js-close-filter-plp" focusable="false" aria-hidden="true" data-dismiss="">
+                          <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-close"></use>
+                        </svg>
+                      </button>
+
+                    </div>
+
+                    <div class="separator-line"></div>
+
+                    <div class="refinements">
+
+                      <fieldset>
+                        <legend class="sr-only">Filter by Categories</legend>
+                        <div data-pid="categories" class="collapsible-title">
+                          <div class="filter-tab-name">Categories</div>
+                          <button aria-expanded="false" class="down-filter-collapse-categories open-filterTab-icon ml-auto">
+                            <span class="sr-only">Show filter categories</span>
+                            <svg class="down-filter-collapse-categories open-filterTab-icon ml-auto" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-down"></use>
+                            </svg>
+                          </button>
+                          <button aria-expanded="true" class="up-filter-collapse-categories open-filterTab-icon ml-auto d-none">
+                            <span class="sr-only">Hide filter categories</span>
+                            <svg class="up-filter-collapse-categories open-filterTab-icon ml-auto d-none" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-up"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="content-filter-panel">
+
+                          <ul class="values content">
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Bags" data-filter="macrocategoryacme" data-analyticsvalue="Bags" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Bags" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Bags" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Bags">
+                                    Bags ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Bags ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Blazers" data-filter="macrocategoryacme" data-analyticsvalue="Blazers" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Blazers" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Blazers" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Blazers">
+                                    Blazers ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Blazers ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Coats &amp; Jackets" data-filter="macrocategoryacme" data-analyticsvalue="Coats &amp; Jackets" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Coats%20%26%20Jackets" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Coats%20%26%20Jackets" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Coats &amp; Jackets">
+                                    Coats &amp; Jackets ( 3 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Coats &amp; Jackets ( 3 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Hats" data-filter="macrocategoryacme" data-analyticsvalue="Hats" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Hats" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Hats" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Hats">
+                                    Hats ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Hats ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Knitwear" data-filter="macrocategoryacme" data-analyticsvalue="Knitwear" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Knitwear" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Knitwear" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Knitwear">
+                                    Knitwear ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Knitwear ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Leisure" data-filter="macrocategoryacme" data-analyticsvalue="Leisure" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Leisure" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Leisure" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Leisure">
+                                    Leisure ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Leisure ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Loafers" data-filter="macrocategoryacme" data-analyticsvalue="Loafers" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Loafers" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Loafers" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Loafers">
+                                    Loafers ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Loafers ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Other Accessories" data-filter="macrocategoryacme" data-analyticsvalue="Other Accessories" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Other%20Accessories" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Other%20Accessories" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Other Accessories">
+                                    Other Accessories ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Other Accessories ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Pants" data-filter="macrocategoryacme" data-analyticsvalue="Pants" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Pants" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Pants" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Pants">
+                                    Pants ( 5 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Pants ( 5 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Shirts" data-filter="macrocategoryacme" data-analyticsvalue="Shirts" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Shirts" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Shirts" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Shirts">
+                                    Shirts ( 3 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Shirts ( 3 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Small Leather Goods" data-filter="macrocategoryacme" data-analyticsvalue="Small Leather Goods" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Small%20Leather%20Goods" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Small%20Leather%20Goods" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Small Leather Goods">
+                                    Small Leather Goods ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Small Leather Goods ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Suits" data-filter="macrocategoryacme" data-analyticsvalue="Suits" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Suits" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Suits" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Suits">
+                                    Suits ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Suits ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Travelwear" data-filter="macrocategoryacme" data-analyticsvalue="Travelwear" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Travelwear" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=Travelwear" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Travelwear">
+                                    Travelwear ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Travelwear ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="T-shirts &amp; Polos" data-filter="macrocategoryacme" data-analyticsvalue="T-shirts &amp; Polos" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=T-shirts%20%26%20Polos" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macrocategoryacme&amp;prefv1=T-shirts%20%26%20Polos" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="T-shirts &amp; Polos">
+                                    T-shirts &amp; Polos ( 4 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    T-shirts &amp; Polos ( 4 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="separator-line"></div>
+                      </fieldset>
+
+                      <fieldset>
+                        <legend class="sr-only">Filter by Color</legend>
+                        <div data-pid="color" class="collapsible-title">
+                          <div class="filter-tab-name">Color</div>
+                          <button aria-expanded="false" class="down-filter-collapse-color open-filterTab-icon ml-auto">
+                            <span class="sr-only">Show filter color</span>
+                            <svg class="down-filter-collapse-color open-filterTab-icon ml-auto" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-down"></use>
+                            </svg>
+                          </button>
+                          <button aria-expanded="true" class="up-filter-collapse-color open-filterTab-icon ml-auto d-none">
+                            <span class="sr-only">Hide filter color</span>
+                            <svg class="up-filter-collapse-color open-filterTab-icon ml-auto d-none" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-up"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="content-filter-panel">
+
+                          <ul class="values content">
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Beige" data-filter="macro-color" data-analyticsvalue="Beige" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Beige" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Beige" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Beige">
+                                    Beige ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Beige ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Blue" data-filter="macro-color" data-analyticsvalue="Blue" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Blue" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Blue" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Blue">
+                                    Blue ( 11 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Blue ( 11 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Brown" data-filter="macro-color" data-analyticsvalue="Brown" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Brown" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Brown" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Brown">
+                                    Brown ( 7 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Brown ( 7 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Orange" data-filter="macro-color" data-analyticsvalue="Orange" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Orange" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Orange" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Orange">
+                                    Orange ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Orange ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Red" data-filter="macro-color" data-analyticsvalue="Red" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Red" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=Red" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Red">
+                                    Red ( 3 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Red ( 3 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="White" data-filter="macro-color" data-analyticsvalue="White" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=White" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=macro-color&amp;prefv1=White" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="White">
+                                    White ( 6 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    White ( 6 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="separator-line"></div>
+                      </fieldset>
+
+                      <fieldset>
+                        <legend class="sr-only">Filter by Collection</legend>
+                        <div data-pid="collection" class="collapsible-title">
+                          <div class="filter-tab-name">Collection</div>
+                          <button aria-expanded="false" class="down-filter-collapse-collection open-filterTab-icon ml-auto">
+                            <span class="sr-only">Show filter collection</span>
+                            <svg class="down-filter-collapse-collection open-filterTab-icon ml-auto" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-down"></use>
+                            </svg>
+                          </button>
+                          <button aria-expanded="true" class="up-filter-collapse-collection open-filterTab-icon ml-auto d-none">
+                            <span class="sr-only">Hide filter collection</span>
+                            <svg class="up-filter-collapse-collection open-filterTab-icon ml-auto d-none" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-up"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="content-filter-panel">
+
+                          <ul class="values content">
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="Autumn-Winter" data-filter="season" data-analyticsvalue="Autumn-Winter" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=season&amp;prefv1=Autumn-Winter" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=season&amp;prefv1=Autumn-Winter" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="Autumn-Winter">
+                                    Autumn-Winter ( 27 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    Autumn-Winter ( 27 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="separator-line"></div>
+                      </fieldset>
+
+                      <fieldset>
+                        <legend class="sr-only">Filter by Size</legend>
+                        <div data-pid="size" class="collapsible-title">
+                          <div class="filter-tab-name">Size</div>
+                          <button aria-expanded="false" class="down-filter-collapse-size open-filterTab-icon ml-auto">
+                            <span class="sr-only">Show filter size</span>
+                            <svg class="down-filter-collapse-size open-filterTab-icon ml-auto" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-down"></use>
+                            </svg>
+                          </button>
+                          <button aria-expanded="true" class="up-filter-collapse-size open-filterTab-icon ml-auto d-none">
+                            <span class="sr-only">Hide filter size</span>
+                            <svg class="up-filter-collapse-size open-filterTab-icon ml-auto d-none" focusable="false" aria-hidden="true">
+                              <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-arrow-up"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <div class="content-filter-panel">
+
+                          <ul class="values content">
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="XXS" data-filter="filter-size" data-analyticsvalue="XXS" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XXS-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XXS-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="XXS">
+                                    XXS ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    XXS ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="XS" data-filter="filter-size" data-analyticsvalue="XS" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XS-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XS-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="XS">
+                                    XS ( 13 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    XS ( 13 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="S" data-filter="filter-size" data-analyticsvalue="S" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=S-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=S-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="S">
+                                    S ( 20 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    S ( 20 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="M" data-filter="filter-size" data-analyticsvalue="M" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=M-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=M-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="M">
+                                    M ( 21 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    M ( 21 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="L" data-filter="filter-size" data-analyticsvalue="L" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=L-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=L-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="L">
+                                    L ( 12 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    L ( 12 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="XL" data-filter="filter-size" data-analyticsvalue="XL" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XL-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XL-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="XL">
+                                    XL ( 10 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    XL ( 10 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="XXL" data-filter="filter-size" data-analyticsvalue="XXL" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XXL-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=XXL-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="XXL">
+                                    XXL ( 4 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    XXL ( 4 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="3XL" data-filter="filter-size" data-analyticsvalue="3XL" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=3XL-M" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=3XL-M" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="3XL">
+                                    3XL ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    3XL ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="One Size" data-filter="filter-size" data-analyticsvalue="One Size" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=OS" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=OS" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="One Size">
+                                    One Size ( 4 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    One Size ( 4 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="39" data-filter="filter-size" data-analyticsvalue="39" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=39" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=39" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="39">
+                                    39 ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    39 ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="40" data-filter="filter-size" data-analyticsvalue="40" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=40" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=40" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="40">
+                                    40 ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    40 ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="41" data-filter="filter-size" data-analyticsvalue="41" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=41" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=41" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="41">
+                                    41 ( 2 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    41 ( 2 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                            <li class="refinement-item col-12 ">
+                              <div class="cc-form-group">
+                                <div class="cc-content-checkbox custom-checkbox">
+
+                                  <input type="checkbox" class="cc-checkbox custom-control-input " id="43" data-filter="filter-size" data-analyticsvalue="43" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=43" value="/on/demandware.store/Sites-bc-cn-Site/en_CN/Search-ShowAjax?cgid=man-high-summer&amp;pmin=1%2e00&amp;prefn1=filter-size&amp;prefv1=43" />
+
+                                  <label class="cc-check-label custom-control-label cc-filter-Text" for="43">
+                                    43 ( 1 )
+                                  </label>
+                                  <span class="sr-only selected-assistive-text">
+                    43 ( 1 )
+                </span>
+                                </div>
+                              </div>
+
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="separator-line"></div>
+                      </fieldset>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col ">
+
+                  <div class="row product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+
+            
+
+                
+                    <div class="col-sm-4 col-md-4 grid3-tile-margin js-singleItem-plp">
+                     
+                      <div class="product" data-pid="232M291D6181P">
+                        <div class="cc-product-tile">
+                          <div class="cc-image-container js-image-container" data-id="232M291D6181P">
+                
+                            <button class="js-add-to-wishlist cc-share-heart-icons social-wish-232M291D6181P d-none d-lg-block" data-color="C5797" data-pid="232M291D6181P" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-AddProduct" aria-label="Save in Wishlist Blazer-style outerwear">
+                              <svg class="cc-hover-icon stroke" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-heart"></use>
+                              </svg>
+                              <svg class="cc-hover-icon fill cc-hide" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#fill-heart"></use>
+                              </svg>
+                            </button>
+                        
+                            <div class="js-analytics-click-product cc-padding-preload-img" data-pid="232M291D6181P">
+                              <a href="/base.html" class="js-pdp-variant-link cc-standard-image" data-pid="232M291D6181P">
+                                <picture>
+                                  <img src="/long/DSC01424.jpg" class="cc-tile-image js-tile-image cc-min-height-tile " loading="eager" id="232M291D6181P" alt="" />
+                                </picture>
+                              </a>
+                            </div>
+                            <div class="hide-mobile cc-size-color-modal cc-size-color-modal-lg-variant cc-image-plp-box js-size-color-modal js-desktop-variant sizecolorTab-232M291D6181P" data-pid="232M291D6181P">
+                              <div class="hide-mobile">
+                                <div class="js-product-info" data-has-range-price="false"></div>
+                              </div>
+                              <div class="cc-separator-line"></div>
+                            </div>
+                          </div>
+                          <div class="cc-tile-body">
+                            <div class="pdp-link js-analytics-click-product">
+                              <a href="" data-href="" class="js-pdp-variant-link" data-pid="232M291D6181P" data-cs-override-id="product-redirect-name-232M291D6181P" aria-labelledby="sr-232M291D6181P-name sr-232M291D6181P-color sr-232M291D6181P-size sr-232M291D6181P-price">
+                                Base  
+                        
+                <div class="cc-price js-price" id="sr-232M291D6181P-price">  
+                <span>
+                <span class="sales cc-sales">
+                <span class="cc-price-text">179.000</span>
+                </span>
+                </span>
+                </div>
+                </a>
+                            </div>
+                
+                            <div class="cc-icon-container js-open-size-color cc-icon-open-size-color hide-overlay-grid3 openTab-232M291D6181P" data-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Product-CheckAvailbleSizes" data-plus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus" data-minus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-minus" data-id="232M291D6181P">
+                              <button class="js-size-color float-right" aria-expanded="false" aria-label="View Blazer-style outerwear available Sizes and Colors" data-cs-override-id="product-expand-size-232M291D6181P">
+                                <svg class="float-right icon js-change-icon" aria-hidden="true" focusable="false" data-id="232M291D6181P" data-dismiss="modal">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                
+                          </div>
+                          <!-- END_dwmarker -->
+                        </div>
+                
+                      </div>
+                    </a>
+                    </div>
+                
+                    <div class="col-sm-4 col-md-4 grid3-tile-margin js-singleItem-plp">
+                      <!-- CQuotient Activity Tracking (viewCategory-cquotient.js) -->
+                
+                      <div class="product" data-pid="232M291D6181P">
+                        <div class="cc-product-tile">
+                          <div class="cc-image-container js-image-container" data-id="232M291D6181P">
+                
+                            <button class="js-add-to-wishlist cc-share-heart-icons social-wish-232M291D6181P d-none d-lg-block" data-color="C5797" data-pid="232M291D6181P" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-AddProduct" aria-label="Save in Wishlist Blazer-style outerwear">
+                              <svg class="cc-hover-icon stroke" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-heart"></use>
+                              </svg>
+                              <svg class="cc-hover-icon fill cc-hide" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#fill-heart"></use>
+                              </svg>
+                            </button>
+                            <div class="js-analytics-click-product cc-padding-preload-img" data-pid="232M291D6181P">
+                              <a href="/simbolismo.html" class="js-pdp-variant-link cc-standard-image" data-pid="232M291D6181P">
+                                <picture>
+                                  <img src="/long/DSC01362.jpg" class="cc-tile-image js-tile-image cc-min-height-tile " loading="eager" id="232M291D6181P" alt="" />
+                                </picture>
+                              </a>
+                            </div>
+                            <div class="hide-mobile cc-size-color-modal cc-size-color-modal-lg-variant cc-image-plp-box js-size-color-modal js-desktop-variant sizecolorTab-232M291D6181P" data-pid="232M291D6181P">
+                              <div class="hide-mobile">
+                                <div class="js-product-info" data-has-range-price="false"></div>
+                              </div>
+                              <div class="cc-separator-line"></div>
+                            </div>
+                          </div>
+                          <div class="cc-tile-body">
+                            <div class="pdp-link js-analytics-click-product">
+                              <a href="" data-href="" class="js-pdp-variant-link" data-pid="232M291D6181P" data-cs-override-id="product-redirect-name-232M291D6181P" aria-labelledby="sr-232M291D6181P-name sr-232M291D6181P-color sr-232M291D6181P-size sr-232M291D6181P-price">
+                               Simbolismo
+                        
+                <div class="cc-price js-price" id="sr-232M291D6181P-price">  
+                <span>
+                <span class="sales cc-sales">
+                <span class="cc-price-text">179.000</span>
+                </span>
+                </span>
+                </div>
+                </a>
+                            </div>
+                
+                            <div class="cc-icon-container js-open-size-color cc-icon-open-size-color hide-overlay-grid3 openTab-232M291D6181P" data-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Product-CheckAvailbleSizes" data-plus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus" data-minus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-minus" data-id="232M291D6181P">
+                              <button class="js-size-color float-right" aria-expanded="false" aria-label="View Blazer-style outerwear available Sizes and Colors" data-cs-override-id="product-expand-size-232M291D6181P">
+                                <svg class="float-right icon js-change-icon" aria-hidden="true" focusable="false" data-id="232M291D6181P" data-dismiss="modal">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                
+                          </div>
+                          <!-- END_dwmarker -->
+                        </div>
+                
+                      </div>
+                
+                    </div>
+                    <div class="col-sm-4 col-md-4 grid3-tile-margin js-singleItem-plp">
+                      <!-- CQuotient Activity Tracking (viewCategory-cquotient.js) -->
+                
+                      <div class="product" data-pid="232M291D6181P">
+                        <div class="cc-product-tile">
+                          <div class="cc-image-container js-image-container" data-id="232M291D6181P">
+                
+                            <button class="js-add-to-wishlist cc-share-heart-icons social-wish-232M291D6181P d-none d-lg-block" data-color="C5797" data-pid="232M291D6181P" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-AddProduct" aria-label="Save in Wishlist Blazer-style outerwear">
+                              <svg class="cc-hover-icon stroke" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-heart"></use>
+                              </svg>
+                              <svg class="cc-hover-icon fill cc-hide" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#fill-heart"></use>
+                              </svg>
+                            </button>
+                            <div class="js-analytics-click-product cc-padding-preload-img" data-pid="232M291D6181P">
+                              <a href="/iniziale.html" class="js-pdp-variant-link cc-standard-image" data-pid="232M291D6181P">
+                                <picture>
+                                  <img src="/long/cfutbolka.png" class="cc-tile-image js-tile-image cc-min-height-tile " loading="eager" id="232M291D6181P" alt="" />
+                                </picture>
+                              </a>
+                            </div>
+                            <div class="hide-mobile cc-size-color-modal cc-size-color-modal-lg-variant cc-image-plp-box js-size-color-modal js-desktop-variant sizecolorTab-232M291D6181P" data-pid="232M291D6181P">
+                              <div class="hide-mobile">
+                                <div class="js-product-info" data-has-range-price="false"></div>
+                              </div>
+                              <div class="cc-separator-line"></div>
+                            </div>
+                          </div>
+                          <div class="cc-tile-body">
+                            <div class="pdp-link js-analytics-click-product">
+                              <a href="" data-href="" class="js-pdp-variant-link" data-pid="232M291D6181P" data-cs-override-id="product-redirect-name-232M291D6181P" aria-labelledby="sr-232M291D6181P-name sr-232M291D6181P-color sr-232M291D6181P-size sr-232M291D6181P-price">
+                               С iniziale
+                        
+                <div class="cc-price js-price" id="sr-232M291D6181P-price">  
+                <span>
+                <span class="sales cc-sales">
+                <span class="cc-price-text">179.000</span>
+                </span>
+                </span>
+                </div>
+                </a>
+                            </div>
+                
+                            <div class="cc-icon-container js-open-size-color cc-icon-open-size-color hide-overlay-grid3 openTab-232M291D6181P" data-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Product-CheckAvailbleSizes" data-plus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus" data-minus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-minus" data-id="232M291D6181P">
+                              <button class="js-size-color float-right" aria-expanded="false" aria-label="View Blazer-style outerwear available Sizes and Colors" data-cs-override-id="product-expand-size-232M291D6181P">
+                                <svg class="float-right icon js-change-icon" aria-hidden="true" focusable="false" data-id="232M291D6181P" data-dismiss="modal">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus"></use>
+                                </svg>
+                              </button>
+                            </div>
+                
+                          </div>
+                          <!-- END_dwmarker -->
+                        </div>
+                
+                      </div>
+                
+                    </div>
+                    <div class="col-sm-4 col-md-4 grid3-tile-margin js-singleItem-plp">
+                        <!-- CQuotient Activity Tracking (viewCategory-cquotient.js) -->
+  
+                        <div class="product" data-pid="232M291D6181P">
+                          <div class="cc-product-tile">
+                            <div class="cc-image-container js-image-container" data-id="232M291D6181P">
+  
+                              <button class="js-add-to-wishlist cc-share-heart-icons social-wish-232M291D6181P d-none d-lg-block" data-color="C5797" data-pid="232M291D6181P" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-AddProduct" aria-label="Save in Wishlist Blazer-style outerwear">
+                                <svg class="cc-hover-icon stroke" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-heart"></use>
+                                </svg>
+                                <svg class="cc-hover-icon fill cc-hide" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#fill-heart"></use>
+                                </svg>
+                              </button>
+                              <div class="js-analytics-click-product cc-padding-preload-img" data-pid="232M291D6181P">
+                                <a href="/polo.html" class="js-pdp-variant-link cc-standard-image" data-pid="232M291D6181P">
+                                  <picture>
+                                    <img src="/Carisma clasics/DSC01303 (1).jpg" class="cc-tile-image js-tile-image cc-min-height-tile " loading="eager" id="232M291D6181P" alt="" />
+                                  </picture>
+                                </a>
+                              </div>
+                              <div class="hide-mobile cc-size-color-modal cc-size-color-modal-lg-variant cc-image-plp-box js-size-color-modal js-desktop-variant sizecolorTab-232M291D6181P" data-pid="232M291D6181P">
+                                <div class="hide-mobile">
+                                  <div class="js-product-info" data-has-range-price="false"></div>
+                                </div>
+                                <div class="cc-separator-line"></div>
+                              </div>
+                            </div>
+                            <div class="cc-tile-body">
+                              <div class="pdp-link js-analytics-click-product">
+                                <a href="" data-href="" class="js-pdp-variant-link" data-pid="232M291D6181P" data-cs-override-id="product-redirect-name-232M291D6181P" aria-labelledby="sr-232M291D6181P-name sr-232M291D6181P-color sr-232M291D6181P-size sr-232M291D6181P-price">
+                                  Поло футболка
+                          
+      <div class="cc-price js-price" id="sr-232M291D6181P-price">  
+          <span>
+      <span class="sales cc-sales">
+          <span class="cc-price-text">275.000 </span>
+      </span>
+  </span>
+      </div>
+                  </a>
+                              </div>
+  
+                              <div class="cc-icon-container js-open-size-color cc-icon-open-size-color hide-overlay-grid3 openTab-232M291D6181P" data-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Product-CheckAvailbleSizes" data-plus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus" data-minus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-minus" data-id="232M291D6181P">
+                                <button class="js-size-color float-right" aria-expanded="false" aria-label="View Blazer-style outerwear available Sizes and Colors" data-cs-override-id="product-expand-size-232M291D6181P">
+                                  <svg class="float-right icon js-change-icon" aria-hidden="true" focusable="false" data-id="232M291D6181P" data-dismiss="modal">
+                                    <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus"></use>
+                                  </svg>
+                                </button>
+                              </div>
+  
+                            </div>
+                            <!-- END_dwmarker -->
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                      <div class="col-sm-4 col-md-4 grid3-tile-margin js-singleItem-plp">
+                        <!-- CQuotient Activity Tracking (viewCategory-cquotient.js) -->
+  
+                        <div class="product" data-pid="232M291D6181P">
+                          <div class="cc-product-tile">
+                            <div class="cc-image-container js-image-container" data-id="232M291D6181P">
+  
+                              <button class="js-add-to-wishlist cc-share-heart-icons social-wish-232M291D6181P d-none d-lg-block" data-color="C5797" data-pid="232M291D6181P" data-href="/on/demandware.store/Sites-bc-cn-Site/en_CN/Wishlist-AddProduct" aria-label="Save in Wishlist Blazer-style outerwear">
+                                <svg class="cc-hover-icon stroke" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-heart"></use>
+                                </svg>
+                                <svg class="cc-hover-icon fill cc-hide" data-dismiss="modal" data-id="232M291D6181P" aria-hidden="true" focusable="false">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#fill-heart"></use>
+                                </svg>
+                              </button>
+                              <div class="js-analytics-click-product cc-padding-preload-img" data-pid="232M291D6181P">
+                                <a href="/regbi.html" class="js-pdp-variant-link cc-standard-image" data-pid="232M291D6181P">
+                                  <picture>
+                                    <img src="/Carisma clasics/DSC01278.jpg" class="cc-tile-image js-tile-image cc-min-height-tile " loading="eager" id="232M291D6181P" alt="" />
+                                  </picture>
+                                </a>
+                              </div>
+                              <div class="hide-mobile cc-size-color-modal cc-size-color-modal-lg-variant cc-image-plp-box js-size-color-modal js-desktop-variant sizecolorTab-232M291D6181P" data-pid="232M291D6181P">
+                                <div class="hide-mobile">
+                                  <div class="js-product-info" data-has-range-price="false"></div>
+                                </div>
+                                <div class="cc-separator-line"></div>
+                              </div>
+                            </div>
+                            <div class="cc-tile-body">
+                              <div class="pdp-link js-analytics-click-product">
+                                <a href="" data-href="" class="js-pdp-variant-link" data-pid="232M291D6181P" data-cs-override-id="product-redirect-name-232M291D6181P" aria-labelledby="sr-232M291D6181P-name sr-232M291D6181P-color sr-232M291D6181P-size sr-232M291D6181P-price">
+                 Регби 
+                          
+      <div class="cc-price js-price" id="sr-232M291D6181P-price">  
+          <span>
+      <span class="sales cc-sales">
+          <span class="cc-price-text">275.000 </span>
+      </span>
+  </span>
+      </div>
+                  </a>
+                              </div>
+  
+                              <div class="cc-icon-container js-open-size-color cc-icon-open-size-color hide-overlay-grid3 openTab-232M291D6181P" data-url="/on/demandware.store/Sites-bc-cn-Site/en_CN/Product-CheckAvailbleSizes" data-plus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus" data-minus="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-minus" data-id="232M291D6181P">
+                                <button class="js-size-color float-right" aria-expanded="false" aria-label="View Blazer-style outerwear available Sizes and Colors" data-cs-override-id="product-expand-size-232M291D6181P">
+                                  <svg class="float-right icon js-change-icon" aria-hidden="true" focusable="false" data-id="232M291D6181P" data-dismiss="modal">
+                                    <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/en_CN/v1684638472657/images/sprite.svg#stroke-plus"></use>
+                                  </svg>
+                                </button>
+                              </div>
+  
+                            </div>
+                            <!-- END_dwmarker -->
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                
+                  </div>
+                </div>
+              </div>
+              <span class="hide-mobile-up">
+                        <div class="sticky-bar-mobile">
+        </div>
+        </span>
+      </div>
+
+      <div class="tab-pane container" id="content-search-results-pane">
+        <div id="content-search-results" class="content-grid-header"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Корзина</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="cart">
+            <ul class="cart-items"></ul>
+            <form>
+            <div class="group">      
+              <input id="nameInput" type="text" placeholder="Имя:" required>
+            </div>
+            <div class="group">      
+              <input id="phoneInput" type="phone" placeholder="Номер:" required>
+            </div>
+            <div class="group">      
+              <input id="adress" type="text" placeholder="Адресс как в яндексе:" required>
+            </div>
+            <div class="group">      
+              <input id="massa" type="text" placeholder="Ваш размер: L M" required>
+            </div>
+            <div class="group">      
+              <input id="coments" type="text" placeholder="Коментарии:" required>
+            </div>      
+          </form>
+          <div class="cart_items_balance">
+            <p class="cart-total">Баланс: 0 сум</p>
+          </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="clear-cart-btn">Очистить Корзину</button>
+          <button class="sent" id="sendButton">Оформить заказ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+  <footer id="NewsletterFormOption" class="cc-footer">
+    <div class="cc-footer-main">
+      <div class="js-lazyLoad-newsletter"></div>
+
+      <div class="cc-footer-items">
+        <div class="cc-footer-container">
+          <div class="row">
+            <div
+              class="cc-footer-col col-12 order-4 order-sm-1 cc-nl-desktop-tablet"
+            >
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="cc-footer-col col-12 col-sm-3 order-1 order-sm-2">
+              <div class="content-asset">
+                <!-- dwMarker="content" dwContentID="946a6c0f1cd776264c18d79258" -->
+                <div class="cc-col-title" data-id-footer-menu-item="1">
+                  <h2>
+                    <button
+                      aria-controls="sect-customer-care"
+                      id="accordion-customer-care-id"
+                      class="cc-col-title-button"
+                      aria-disabled="true"
+                      aria-expanded="true"
+                    >
+                      Страницы
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="sect-customer-care"
+                  role="region"
+                  aria-labelledby="accordion-customer-care-id"
+                >
+                  <ul class="cc-footer-links" data-id-footer-menu-item="1">
+                    <li class="cc-content-link">
+                      <a
+                        href="/index.html"
+                        class="cc-footer-link js-exclusive-service-footer"
+                        >Главная</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href="/about.html"
+                        class="cc-footer-link js-exclusive-service-footer"
+                        >О нас</a
+                      >
+                    </li>
+                    <!-- <li class="cc-content-link">
+        <a href="https://shop.brunellocucinelli.cn/en-cn/exclusive-service-appointment.html" class="cc-footer-link">Make an Appointment</a>
+    </li> -->
+                    <li class="cc-content-link">
+                      <a
+                        href="/yslovia.html"
+                        class="cc-footer-link"
+                        >Условия</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href=""
+                        class="cc-footer-link"
+                        >Магазин</a
+                      >
+                    </li>
+                </li>
+             
+                  </ul>
+                </div>
+              </div>
+              <!-- End content-asset -->
+            </div>
+            <div class="cc-footer-col col-12 col-sm-3 order-2 order-sm-3">
+              <div class="content-asset">
+                <!-- dwMarker="content" dwContentID="6c04514b4c22a575ffb979c6a3" -->
+                <div class="cc-col-title" data-id-footer-menu-item="2">
+                  <h2>
+                    <button
+                      aria-controls="sect-philosophy"
+                      id="accordion-philosophy-id"
+                      class="cc-col-title-button"
+                      aria-disabled="true"
+                      aria-expanded="true"
+                    >
+                      Carisma
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="sect-philosophy"
+                  role="region"
+                  aria-labelledby="accordion-philosophy-id"
+                >
+                  <ul class="cc-footer-links" data-id-footer-menu-item="2">
+                    <li class="cc-content-link">
+                      <a
+                        href="/Carisma-clasics.html"
+                        class="cc-footer-link"
+                        target="_blank"
+                        >
+                        Carisma classics</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href="/casual.html"
+                        class="cc-footer-link"
+                        target="_blank"
+                        >Carisma casual </a
+                      >
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+              <!-- End content-asset -->
+            </div>
+            <div class="cc-footer-col col-12 col-sm-3 order-3 order-sm-4">
+              <div class="content-asset">
+                <!-- dwMarker="content" dwContentID="6d194ec900455e6ceac021a1fe" -->
+                <div class="cc-col-title" data-id-footer-menu-item="3">
+                  <h2>
+                    <button
+                      aria-controls="sect-gen-info"
+                      id="accordion-gen-info-id"
+                      class="cc-col-title-button"
+                      aria-disabled="true"
+                      aria-expanded="true"
+                    >
+                      Соц сети
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="sect-gen-info"
+                  role="region"
+                  aria-labelledby="accordion-gen-info-id"
+                >
+                  <ul class="cc-footer-links" data-id-footer-menu-item="3">
+                    <li class="cc-content-link">
+                      <a
+                        href="https://t.me/shomukhidov"
+                        class="cc-footer-link"
+                        >Telegram</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href="https://instagram.com/carisma.uz?igshid=MzRlODBiNWFlZA=="
+                        class="cc-footer-link"
+                        >Instagram</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href="https://www.tiktok.com/@carisma.uz?_t=8eDnKTbyGcz&_r=1"
+                        class="cc-footer-link"
+                        >Tik Tok</a
+                      >
+                    </li>
+                    <li class="cc-content-link">
+                      <a
+                        href="tel:+998909908454"
+                        class="cc-footer-link"
+                        >+998909908454</a
+                      >
+                    </li>
+                   
+                  </ul>
+                </div>
+              </div>
+              <!-- End content-asset -->
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cc-footer-bottom">
+
+    </div>
+  </footer>
+
+  </div>
+  <script src="/carisma.js"></script>
+</body>
+<script type="text/javascript">
+  //<!--
+  /* <![CDATA[ */
+  function trackPage() {
+    try {
+      var trackingUrl = "";
+      var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+      if (typeof dw.ac == "undefined") {
+        dwAnalytics.trackPageView();
+      } else {
+        dw.ac.setDWAnalytics(dwAnalytics);
+      }
+    } catch (err) {};
+  }
+  /* ]]> */
+  // -->
+</script>
+<link rel="stylesheet" href="styles.css">
+
+<script src="scripts.js"></script>
+<link rel="stylesheet" href="styles.css?v=123">
+<script src="scripts.js?v=456"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</html>

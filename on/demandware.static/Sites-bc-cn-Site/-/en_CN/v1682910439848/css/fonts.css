@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiDisplay-Thin.eot);
+    src: url(../fonts/GTEesti/GTEestiDisplay-Thin.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiDisplay-Thin.woff) format("woff"), url(../fonts/GTEesti/GTEestiDisplay-Thin.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiDisplay-Thin.svg") format("svg");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiProDisplay-UltraLight.eot);
+    src: url(../fonts/GTEesti/GTEestiProDisplay-UltraLight.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiProDisplay-UltraLight.woff) format("woff"), url(../fonts/GTEesti/GTEestiProDisplay-UltraLight.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiProDisplay-UltraLight.svg") format("svg");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Light.eot);
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Light.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiProDisplay-Light.woff) format("woff"), url(../fonts/GTEesti/GTEestiProDisplay-Light.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiProDisplay-Light.svg") format("svg");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Regular.eot);
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Regular.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiProDisplay-Regular.woff) format("woff"), url(../fonts/GTEesti/GTEestiProDisplay-Regular.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiProDisplay-Regular.svg") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Medium.eot);
+    src: url(../fonts/GTEesti/GTEestiProDisplay-Medium.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiProDisplay-Medium.woff) format("woff"), url(../fonts/GTEesti/GTEestiProDisplay-Medium.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiProDisplay-Medium.svg") format("svg");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "GTEesti";
+    src: url(../fonts/GTEesti/GTEestiDisplay-Bold.eot);
+    src: url(../fonts/GTEesti/GTEestiDisplay-Bold.eot%3F) format("embedded-opentype"), url(../fonts/GTEesti/GTEestiDisplay-Bold.woff) format("woff"), url(../fonts/GTEesti/GTEestiDisplay-Bold.ttf) format("truetype"), url("../fonts/GTEesti/GTEestiDisplay-Bold.svg") format("svg");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-Light.woff) format("woff"), url(../fonts/Quarto/Quarto-Light.woff2) format("woff2");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-LightItalic.woff) format("woff"), url(../fonts/Quarto/Quarto-LightItalic.woff2) format("woff2");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-Medium.woff) format("woff"), url(../fonts/Quarto/Quarto-Medium.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-MediumItalic.woff) format("woff"), url(../fonts/Quarto/Quarto-MediumItalic.woff2) format("woff2");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-Semibold.woff) format("woff"), url(../fonts/Quarto/Quarto-Semibold.woff2) format("woff2");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-SemiboldItalic.woff) format("woff"), url(../fonts/Quarto/Quarto-SemiboldItalic.woff2) format("woff2");
+    font-weight: 500;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-Bold.woff) format("woff"), url(../fonts/Quarto/Quarto-Bold.woff2) format("woff2");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-BoldItalic.woff) format("woff"), url(../fonts/Quarto/Quarto-BoldItalic.woff2) format("woff2");
+    font-weight: 600;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-Black.woff) format("woff"), url(../fonts/Quarto/Quarto-Black.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Quarto";
+    src: url(../fonts/Quarto/Quarto-BlackItalic.woff) format("woff"), url(../fonts/Quarto/Quarto-BlackItalic.woff2) format("woff2");
+    font-weight: 700;
+    font-style: italic
+}
+
+/*# sourceMappingURL=fonts.css.map */

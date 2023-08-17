@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+  <link rel="icon" href="/img-bronson/black-carizma.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+  <style>
+
+    .cc-pdp__content-attributes .cc-attribute.cc-attribute--color .cc-content-colors-choice .cc-color-choice.cc-active .cc-color-image, .cc-pdp__content-attributes .cc-attribute.cc-attribute--color .cc-content-colors-choice .cc-color-choice.cc-hover .cc-color-image, .cc-pdp__content-attributes .cc-attribute.cc-attribute--color .cc-content-colors-choice .cc-color-choice:active .cc-color-image, .cc-pdp__content-attributes .cc-attribute.cc-attribute--color .cc-content-colors-choice .cc-color-choice:not(:disabled):hover .cc-color-image{
+      object-fit: cover !important;
+    }
+    .cc-content-color-choice-sticky{
+       display: none !important;
+     }
+     .popup-img {
+       object-fit: cover;
+     }
+     .cc-select.bootstrap-select .dropdown-menu li a {
+       padding: 10px 15px;
+       font-size: 14px;
+     }
+     .cc-pdp .cc-content-color-choice-sticky .cc-color-choice-overlay-sticky.cc-open{
+       display: none;
+     }
+     #exampleModalCenter{
+       background-color: rgba(156, 156, 156, 0.539);
+       z-index: 9999 !important;
+     }
+     .swal2-container
+     .swal2-center{
+      z-index: 9999 !important;
+    }
+    .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation{
+      z-index: 9999 !important;
+    }
+     .cc-add-to-wishlist-background{
+       display: none !important;
+     }
+     
+     .add-to-cart-btn{
+     padding: 10px;
+     color: #ffff;
+     background-color: black;
+     border-radius: 10px;
+ }
+     .ot-sdk-container {
+       display: none !important;
+     }
+     .cc-sticky-add-to-cart.cc-open{
+       display: none !important;
+     }
+     .modal-backdrop.show {
+       display: none !important;
+     }
+     .cart-items{
+       list-style: none;
+ 
+     }
+     .popup-img{
+       width: 55px;
+     height: 71px;
+     }
+     .cart-items li{
+       display: flex;
+       gap: 20px;
+     }
+     @media only screen and (min-width: 320px) {
+       .azik{
+         transform: translateX(260px);
+         margin-top: -120px;
+         width: 50px;
+       }
+       .add-to-cart-btn {
+         margin-left: 10px;
+         margin-bottom: 10px;
+         text-align: center;
+         width: 300px;
+         height: 50px;
+         padding: 10px;
+      color: #ffff;
+     background-color: black;
+     border-radius: 5px;
+   }
+   .sent{
+     color: white;
+     background-color: black;
+     border-radius: 5px;
+     padding: 2px;
+    height: 38px;
+    width: 140px;
+   }
+   .price{
+     font-size: 14px;
+   }
+   .clear-cart-btn {
+    color: white;
+    background-color: black;
+    padding: 2px;
+    height: 38px;
+    width: 140px;
+    border-radius: 5px;
+}
+   .item_name{
+     font-size: 18px;
+   }
+   .remove-item-btn{
+     padding: 3px;
+     margin-top: 25px;
+     margin-left: 5px;
+     width: 74px;
+     height: 35px;
+     font-size: 17px;
+     color: #fff;
+     background-color: #ff2b2b;
+     border-radius: 5px;
+   }
+   .modal-content{
+     margin-top: -100px;
+     border: none;
+   }
+   .group input{
+     width: 270px;
+     height: 40px;
+     margin-bottom: 10px;
+     padding: 5px;
+     margin-top: 5px;
+     border-radius: 7px;
+     border: 1px solid;
+   }
+   .cart-total{
+     width: 411px;
+     font-size: 17px;
+     width: 160px;
+   }
+   .cart-items{
+     overflow-y: scroll;
+     height: 100px;
+     margin: 0;
+     padding: 0;
+   }
+ }
+     @media only screen and (min-width: 375px) {
+       .azik{
+         transform: translateX(300px);
+         margin-top: -120px;
+         width: 60px;
+       }
+       .add-to-cart-btn {
+         margin-left: 40px;
+         margin-bottom: 10px;
+         text-align: center;
+         width: 300px;
+         height: 50px;
+         padding: 10px;
+      color: #ffff;
+     background-color: black;
+     border-radius: 5px;
+   }
+   .sent{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .price{
+     font-size: 15px;
+   }
+   .clear-cart-btn{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .item_name{
+     font-size: 24px;
+   }
+   .remove-item-btn{
+     margin-top: 25px;
+     margin-left: 5px;
+     width: 74px;
+     height: 35px;
+     font-size: 17px;
+     color: #fff;
+     background-color: #ff2b2b;
+     border-radius: 5px;
+   }
+   .modal-content{
+     margin-top: -100px;
+     border: none;
+   }
+   .group input{
+     width: 324px;
+     height: 40px;
+     margin-bottom: 15px;
+     padding: 5px;
+     margin-top: 10px;
+     border-radius: 7px;
+     border: 1px solid;
+   }
+   .cart-total{
+     width: 411px;
+     font-size: 17px;
+     width: 160px;
+   }
+   .cart-items{
+     margin: 0;
+     padding: 0;
+   }
+ }
+     @media only screen and (min-width: 425px) {
+       .azik{
+         transform: translateX(340px);
+         margin-top: -120px;
+         width: 60px;
+       }
+       .add-to-cart-btn {
+         margin-left: 10px;
+         margin-bottom: 10px;
+         text-align: center;
+         width: 405px;
+         height: 50px;
+         padding: 10px;
+      color: #ffff;
+     background-color: black;
+     border-radius: 5px;
+   }
+   .modal-footer{
+     gap: 7px;
+   }
+   .sent{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+     width: 180px;
+   }
+   .clear-cart-btn{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+     width: 180px;
+   }
+   .remove-item-btn{
+     margin-top: 25px;
+     width: 77px;
+     height: 25px;
+     color: #fff;
+     background-color: #ff2b2b;
+     border-radius: 5px;
+   }
+   .modal-content{
+     margin-top: -30px;
+     border: none;
+   }
+   .group input{
+     width: 375px;
+     margin-bottom: 15px;
+     padding: 5px;
+     margin-top: 10px;
+     border-radius: 7px;
+     border: 1px solid;
+   }
+   .cart-total{
+     width: 165px;
+     font-size: 17px;
+   }
+   .cart-items{
+     margin: 0;
+     padding: 0;
+   }
+ }
+ @media only screen and (min-width: 768px) {
+   .cart-items{
+       overflow-y: scroll;
+     height: 131px;
+     }
+   .azik{
+         display: none;
+       }
+   .korzina{
+         margin-left: 250px;
+     margin-top: -106px;
+       }
+       .add-to-cart-btn {
+         margin-left: 10px;
+         margin-bottom: 10px;
+         text-align: center;
+         width: 300px;
+         height: 50px;
+         padding: 10px;
+      color: #ffff;
+     background-color: black;
+     border-radius: 5px;
+   }
+   .sent{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .price{
+     font-size: 22px;
+   }
+   .clear-cart-btn{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .remove-item-btn{
+     margin-top: 25px;
+     margin-left: 100px;
+     width: 74px;
+     height: 35px;
+     font-size: 17px;
+     color: #fff;
+     background-color: #ff2b2b;
+     border-radius: 5px;
+   }
+   .modal-content{
+     margin-top: -100px;
+     border: none;
+   }
+   .group input{
+     width: 465px;
+     height: 40px;
+     margin-bottom: 15px;
+     padding: 5px;
+     margin-top: 10px;
+     border-radius: 7px;
+     border: 1px solid;
+   }
+   .cart-total{
+     width: 411px;
+     font-size: 17px;
+   }
+   .cart-items{
+     margin: 0;
+     padding: 0;
+   }
+ }
+ @media only screen and (min-width: 1024px) {
+   .cart-items{
+       overflow-y: scroll;
+     height: 131px;
+     }
+   .azik{
+         display: none;
+       }
+   .korzina{
+         margin-left: 340px;
+     margin-top: -106px;
+       }
+       .add-to-cart-btn {
+         margin-left: 10px;
+         margin-bottom: 10px;
+         text-align: center;
+         width: 405px;
+         height: 50px;
+         padding: 10px;
+      color: #ffff;
+     background-color: black;
+     border-radius: 5px;
+   }
+   .sent{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .price{
+     font-size: 22px;
+   }
+   .clear-cart-btn{
+     color: white;
+     background-color: black;
+     padding: 7px;
+     border-radius: 5px;
+   }
+   .remove-item-btn{
+     margin-top: 25px;
+     margin-left: 100px;
+     width: 74px;
+     height: 35px;
+     font-size: 17px;
+     color: #fff;
+     background-color: #ff2b2b;
+     border-radius: 5px;
+   }
+   .modal-content{
+     margin-top: -10px;
+     border: none;
+   }
+   .group input{
+     width: 465px;
+     height: 40px;
+     margin-bottom: 15px;
+     padding: 5px;
+     margin-top: 10px;
+     border-radius: 7px;
+     border: 1px solid;
+   }
+   .cart-total{
+     width: 411px;
+     font-size: 17px;
+   }
+   .cart-items{
+     margin: 0;
+     padding: 0;
+   }
+ }
+     @media only screen and (min-width: 1440px) {
+       .cart-items{
+       overflow-y: scroll;
+     height: 131px;
+     }
+       .azik{
+         display: none;
+       }
+       .korzina{
+         margin-left: 540px;
+     margin-top: -106px;
+       }
+       .add-to-cart-btn {
+         text-align: center;
+         width: 500px;
+         height: 50px;
+         padding: 10px;
+        color: #ffff;
+     background-color: black;
+   }
+ }
+   </style>
+
+
+  <script>
+    //common/scripts.isml
+  </script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">  
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/global.js" as="script">
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/main.js" as="script">
+  <script defer type="text/javascript" src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/global.js"></script>
+  <script defer type="text/javascript" src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/main.js"></script>
+
+  <script defer type="text/javascript" src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/productDetailNew.js">
+  </script>
+
+  <script defer type="text/javascript" src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/js/sizeGuide.js">
+  </script>
+
+  <!-- here we import interaction studio script, can disable it by interaction studio platform, not async due to flickering -->
+  <script src=""></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'login': 'false',
+      'visitorId': '',
+      // 'optin_sf': 'null', 
+      'visitorShipping': 'CN',
+      'visitorCurrency': 'CNY',
+      'pageCategory': 'product-detail',
+      'pagesubCategory': 'woman',
+      'pageDetail': 't-shirts_&amp;_tops',
+      'pageLanguage': 'zh',
+      'pageStatus': '200',
+      'listingType': ''
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var a = '<span class="hidden" style="display:none;"><span class="login hidden">false</span><span class="visitorId hidden"></span>' + '<span class="visitorShipping hidden">CN</span><span class="visitorCurrency hidden">CNY</span>' + '<span class="pageCategory hidden">product-detail</span>' + '<span class="pagesubCategory hidden">woman</span>' + '<span class="pageDetail hidden">t-shirts_&amp;_tops</span>' + '<span class="pageLanguage hidden">zh</span><span class="pageStatus hidden">200</span></span>';
+      var foo = document.createDocumentFragment();
+      var item = document.createElement('span');
+      item.style.display = "none";;
+      item.innerHTML = a
+      foo.appendChild(item);
+      document.body.appendChild(foo);
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M3R7H8G');
+  </script>
+  <!--  End Google Tag Manager -->
+
+  <input type="hidden" class="js-update-cartItemNumber" name="analyticsUpdate" value="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Analytics-CartItemNumber" />
+
+  <script defer src="https://player.polyv.net/script/player.js"></script>
+
+  <meta charset=UTF-8 />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Наш первый шаг к нашей цели. Carisma представила свою коллекцию Primo летом 30.06.2023. “Primo”, что в переводе с итальянского означает “первый”, каким по счету он и является. Carisma - это более классический и кэжл стиль,предназначенный как и для мужского так и для женского пола. Carisma стремится передать эстетику моды 70-90х, когда в моде была строгость, без разноцветного образа в образе.">
+  <meta name="keywords" content=" Carisma classics, Primo, Carisma casual, Carisma">
+  <meta name="author" content="Carisma">
+  <title>Бежевые штаны из льна | Carisma</title>
+
+  <script type="text/javascript">
+    null
+  </script>
+
+  <link rel="icon" href="on/demandware.static/Sites-bc-cn-Site/-/default/dw630ce924/images/favicon.ico" />
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/global.css" as="style">
+
+  <link rel="stylesheet" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/global.css" />
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/fonts.css" as="style">
+  <link rel="stylesheet" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/fonts.css" />
+
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/productNew.css" as="style">
+  <link rel="stylesheet" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/productNew.css" />
+
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/newsletterOverlay.css" as="style">
+  <link rel="stylesheet" href="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/css/newsletterOverlay.css" />
+
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/default/dw6481ebf3/fonts/GTEesti/GTEestiProDisplay-Regular.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/default/dw92991d13/fonts/GTEesti/GTEestiProDisplay-Light.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="on/demandware.static/Sites-bc-cn-Site/-/default/dw4b503bb8/fonts/GTEesti/GTEestiProDisplay-Medium.woff" as="font" crossorigin="anonymous">
+
+  <meta name="google-site-verification" content="-wqU98hF-H3_Igxbb9ZpdspakNTiYFWuqwBcH8RwGnM" />
+
+  <meta name="facebook-domain-verification" content="ho3asoin4cklij4qzj05vguumrz67e" />
+  <meta name="msvalidate.01" content="8674B57EA3ABCF8A1E526891C17F89FB" />
+  <meta name="yandex-verification" content="f34500f45e930a1a" />
+
+  <style>
+    @media (max-width: 1199.98px) {
+      .cc-navbar .cc-navbar-menu .cc-navbar-list .cc-navbar-item .cc-navbar-link:lang(ru) {
+        font-size: 0.625rem;
+      }
+    }
+  </style>
+  <script type="application/javascript">
+    const datePickerLocale = "zh-CN"
+  </script>
+
+</head>
+
+<body>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Корзина</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="cart">
+          <ul class="cart-items"></ul>
+          <form>
+          <div class="group">      
+            <input id="nameInput" type="text" placeholder="Имя:" required>
+          </div>
+          <div class="group">      
+            <input id="phoneInput" type="phone" placeholder="Номер:" required>
+          </div>
+          <div class="group">      
+            <input id="adress" type="text" placeholder="Адресс как в яндексе:" required>
+          </div>
+          <div class="group">      
+            <input id="massa" type="text" placeholder="Ваш размер: L M" required>
+          </div>
+          <div class="group">      
+            <input id="coments" type="text" placeholder="Коментарии:" required>
+          </div>      
+        </form>
+        <div class="cart_items_balance">
+          <p class="cart-total">Баланс: 0 сум</p>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="clear-cart-btn">Очистить Корзину</button>
+        <button class="sent" id="sendButton">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="page" data-action="Product-Show" data-querystring="pid=231M0A45EE400&amp;x-dev=desktop">
+    <a class="sr-only" aria-hidden="true" tabindex="-1" id="cc-prevent-skipinmain-autofocus"></a>
+    <div role="navigation" aria-label="Skip link">
+
+    </div>
+
+    <div class="cc-content-header">
+      <div class="js-lazyload-popUp" data-action-url="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Locale-Locale">
+
+      </div>
+
+      <header class="cc-header js-header sticky-for-a-while">
+
+    
+        <div class="cc-top-header cc-no-mobile cc-clearfix">
+        </div>
+
+        <div class="cc-logo-container">
+          <h1 class="cc-content-logo">
+            <a
+              class="cc-logo-link"
+              href="index.html"
+              data-cs-override-id="header-item-mob-logo"
+            >
+              <img
+                class="cc-logo cc-logo-primary"
+                src="/img-bronson/black-carizma.svg"
+                alt=""
+              />
+
+              <img
+                class="cc-logo cc-logo-white"
+                src="/img-bronson/carizma-white.svg"
+                alt=""
+              />  
+            </a>
+             <h1>
+        </div>
+        <img class="azik" src="/img-carisma/bag-icon-remov.png" data-toggle="modal" data-target="#exampleModalCenter" width="80px" alt="">
+
+        <div class="cc-top-header cc-only-mobile cc-clearfix">
+ 
+
+          <div class="cc-section-right">
+
+            </div>
+            </div>
+
+
+      </header>
+      </div>
+
+      <div id="js-login-registration-modal" class="cc-login-registration-offcanvas">
+        <div class="cc-off-canvas-outside js-loginregistration-closeBy-overlay"></div>
+      </div>
+
+      <div role="main" id="maincontent" tabindex="-1">
+        <p class="sr-only">
+          main content start
+        </p>
+        <div class="cc-analytics-impressions-block-scroll js-analytics-impressions-block-scroll"></div>
+        <div id="cart-placeholder" data-cartajax-url="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Cart-MiniCartSideAjax"></div>
+
+        <input type="hidden" id="analytics-from" value="pdp" />
+
+        <input type="hidden" id="addToCartAutomatic" value="false" />
+        <input type="hidden" id="js-enableDisclaimer" value="false" />
+        <input type="hidden" id="js-open-from-sticky" value="false" />
+        <input type="hidden" id="idNumberSizeSelectedUrl" value="231M0A45EE400" />
+        <input type="hidden" id="4giftButtonSizeNotSelected" value="false" />
+        <input type="hidden" id="payPalButtonSizeNotSelected" value="false" />
+        <input type="hidden" id="applePayButtonSizeNotSelected" value="false" />
+        <input type="hidden" id="wishlistContainsProductURL" value="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Wishlist-ContainsProduct" />
+        <input type="hidden" id="skuMaster" value="231M0A45EE400" />
+
+        <div class="product-detail cc-pdp" data-pid="231M0A45EE400" data-skumaster="231M0A45EE400">
+          <div class="cc-container-full js-open-requestsize-from-plp" data-pid="231M0A45EE400" data-requestsize="null" data-requestcolor="null">
+
+            <div class="cc-pdp__breadcrumbs">
+              <div class="cc-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+                <div class="cc-container">
+                  <ol class="cc-breadcrumbs-list">
+
+                    <li class="cc-breadcrumb-item">
+                      <a class="cc-breadcrumb-link js-update-with-template" href="/index.html">
+                            Домой
+                        </a>
+                    </li>
+
+                    <li class="cc-breadcrumb-item">
+                      <a class="cc-breadcrumb-link js-update-with-template" href="/casual.html">
+                        Carisma casual
+                        </a>
+                    </li>
+                    <li class="cc-breadcrumb-item cc-breadcrumb-item-last">
+
+                      <div class="cc-breadcrumb-link cc-breadcrumb-link-not-navigable" aria-current="page">
+                        Бежевые штаны из льна
+                      </div>
+
+                    </li>
+
+                  </ol>
+                </div>
+              </div>
+
+            </div>
+
+            <section class="cc-pdp__wrp">
+
+              <div class="cc-pdp__images">
+
+                <div class="cc-analytics-same-dim js-analytics-impressions-product-not-impressed js-analytics-click-product-info-231M0A45EE400 js-analytics-product-checkoutFlux js-analytics-click-product-info-null" data-pid="231M0A45EE400" data-name="Jersey T-shirt" data-currency="CNY" data-price="9000.00" data-promotions="false" data-color="C390" data-size="null" data-gender="female" data-analyticscolor="Anthracite" data-url="woman/ready_to_wear/topwear_w" data-list="" data-position="1" data-available="true" data-template="" data-from="pdp" data-video="false" data-quantity="0.0" data-img="img_standard">
+                </div>
+                <input type="hidden" id="searchList" value="category-woman-ready_to_wear-topwear_w" />
+            
+                <input type="hidden" id="js-pv-image" value="/white/DSC01284.jpg" />
+
+                <div class="cc-image-list js-image-list cc-pdp__image-list" id="pdpImages-231M0A45EE400" data-slick='{"slidesToShow": 1.2, "slidesToScroll": 1, "infinite": false, "mobileFirst": true, "arrows": false, "dots": true, "vertical": true, "verticalSwiping": true, "responsive": [{"breakpoint": 767, "settings": "unslick"}]}'>
+                  <div class="cc-content-image">
+                    <!-- <img src="/pants-two-img/DSC01503.jpg" alt=""> -->
+                    <picture>
+                      <source media="(max-width: 768px)" class="js-max" srcset="/pants-two-img/DSC01503.jpg" sizes="
+                (resolution >= 3dppx) 33vw,
+                (resolution >= 2dppx) 50vw,
+                100vw" />
+                      <source media="(min-width: 768px)" class="js-min" srcset="/pants-two-img/DSC01503.jpg" sizes="
+                (resolution >= 2dppx) 25vw,
+                50vw" />
+                      <img width="500" height="627" src="/pants-two-img/DSC01503.jpg" data-src="/on/demandware.static/-/Sites-catalog-master-bc/default/dw0dbdb62a/images/large/season-231/231M0A45EE400C390-D.jpg?sw=400" class="cc-image lazyload js-zoom" itemprop="image" loading="lazy" alt="短袖T裇 - 细节视角" />
+                    </picture>
+                  </div>
+
+                  <div class="cc-content-image">
+                    <picture>
+                      <source media="(max-width: 768px)" class="js-max" srcset="/pants-two-img/DSC01472.jpg" sizes="
+                (resolution >= 3dppx) 33vw,
+                (resolution >= 2dppx) 50vw,
+                100vw" />
+                      <source media="(min-width: 768px)" class="js-min" srcset="/pants-two-img/DSC01472.jpg
+             " sizes="
+                (resolution >= 2dppx) 25vw,
+                50vw" />
+                      <img width="500" height="627" src="/pants-two-img/DSC01472.jpg" class="cc-image lazyload js-zoom" itemprop="image" loading="lazy" alt="短袖T裇 - 正面视角" />
+                    </picture>
+                  </div>
+
+                  <div class="cc-content-image">
+                    <!-- <img src="/pants-two-img/DSC01503.jpg" alt=""> -->
+                    <picture>
+                      <source media="(max-width: 768px)" class="js-max" srcset="/pants-two-img/DSC01474.jpg" sizes="
+                (resolution >= 3dppx) 33vw,
+                (resolution >= 2dppx) 50vw,
+                100vw" />
+                      <source media="(min-width: 768px)" class="js-min" srcset="/pants-two-img/DSC01474.jpg" sizes="
+                (resolution >= 2dppx) 25vw,
+                50vw" />
+                      <img width="500" height="627" src="/pants-two-img/DSC01474.jpg" data-src="/on/demandware.static/-/Sites-catalog-master-bc/default/dw4161082b/images/large/season-231/231M0A45EE400C390-R.jpg?sw=400" class="cc-image lazyload js-zoom" itemprop="image" loading="lazy" alt="" />
+                    </picture>
+                  </div>
+
+     
+                  <div class="cc-content-image">
+                    <!-- <img src="/pants-two-img/DSC01507.jpg" alt=""> -->
+                    <picture>
+                      <source media="(max-width: 768px)" class="js-max" srcset="/pants-two-img/DSC01507.jpg" sizes="
+                (resolution >= 3dppx) 33vw,
+                (resolution >= 2dppx) 50vw,
+                100vw" />
+                      <source media="(min-width: 768px)" class="js-min" srcset="/pants-two-img/DSC01507.jpg" sizes="
+                (resolution >= 2dppx) 25vw,
+                50vw" />
+                      <img width="500" height="627" src="/pants-two-img/DSC01507.jpg" data-src="/on/demandware.static/-/Sites-catalog-master-bc/default/dwf55747fe/images/large/season-231/231M0A45EE400C390-E.jpg?sw=400" class="cc-image lazyload js-zoom" itemprop="image" loading="lazy" alt="短袖T裇 - 全身视角" />
+                    </picture>
+                  </div>
+
+                </div>
+                <div class="cc-zoom-modal hidden js-zoom-modal">
+                  <img src="t-shirt-in-jersey-231M0A45EE400.html" />
+                </div>
+                <div class="cc-pdp__wishlist cc-pdp__wishlist--mobile">
+                </div>
+              </div>
+              <div class="cc-pdp__info">
+                <button class="cc-pdp__info__btn-top"><span class="cc-pdp__info__btn-top__line"></span><span class="sr-only">Hide / Show details</span></button>
+                <div class="cc-pdp__info__sticky">
+                  <div class="cc-pdp__info__focus">
+                    <div class="cc-pdp__content-title">
+                      <span class="cc-pdp__title cc-pdp__title--mobile">Бежевые штаны из льна</span>
+                      <h1 class="cc-pdp__title cc-pdp__title--desktop">Бежевые штаны из льна</h1>
+                      <div class="cc-pdp__actions-desktop">
+                        <div class="cc-content-share">
+
+
+
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="cc-pdp__price cc-pdp__price--desktop js-prices">
+
+                      <div class="cc-price js-price" id="sr-231M0A45EE400-price">
+                        <span class="cc-price-text">325.000 сум</span>
+                      </div>
+                      <img src="/img-carisma/bag-icon.png" width="50px" class="korzina" data-toggle="modal" data-target="#exampleModalCenter" alt="">
+                    </div>
+
+                    <div class="cc-pdp__content-attributes">
+                      <div class="cc-content-attributes">
+
+                        <div class="cc-attribute cc-attribute--color" data-attr="color">
+
+                          <!-- Select <Attribute> Label -->
+                          <span class="cc-attribute-label color non-input-label">
+                          Цвет
+    </span>
+
+                          <!-- Swatch Image Attribute Values -->
+                          <div class="cc-content-colors-choice">
+                            <div class="cc-content-items">
+
+                              <div class="cc-item">
+                                <button class="js-color-choice cc-color-choice cc-active js-analytics-product-swatch" aria-label="选择 颜色 C390" aria-describedby="C390" data-color-not-selectable="false" data-attr-value="C390" data-analyticscolor="Anthracite" data-url="">
+                                
+                                  <picture>
+                                    <source srcset="
+                                    /pants-two-img/DSC01503.jpg" sizes="60px" />
+                                    <img src="/pants-two-img/DSC01503.jpg" class="cc-color-image min-height-cls" alt="" />
+                                  </picture>
+                                  <span id="C390" class="sr-only">
+                            selected
+                        </span>
+                                  <span class="cc-color-text js-color-text ">Бежевый</span>
+                                </button>
+                              </div>
+
+                            </div>
+
+                          </div>
+                          <!-- Add to Wishlist confirmation message -->
+
+                          <div class="cc-add-to-wishlist-message cc-item js-wishlist-color-id-C390 hidden" data-color-id="C390" aria-live="polite" aria-atomic="true" aria-hidden="false" aria-labelledby="addwhishlist-dialog-heading" aria-describedby="addwhishlist-dialog-description" role="dialog">
+                            <div class="cc-content-wishlist-prod-title">
+                              <h2 class="cc-prod-title" id="addwhishlist-dialog-heading">汗布T恤</h2>
+                              <p class="sr-only js-wish-changeId-forMobile" id="addwhishlist-dialog-description">
+                                在这个部分您可以检查产品是否已经加入您的愿望清单
+                              </p>
+                              <button class="cc-close-button js-close-add-to-wishlist-message">
+                                <svg class="cc-icon" aria-hidden="true" focusable="false">
+                                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#stroke-close"></use>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="cc-add-to-wishlist-messages-content">
+                              <div class="cc-left-content">
+                                <img class="cc-color-image lazyload" src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200A45EE400C390-F.jpg?sw=200 0xdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=4000A45EE400C390-F.jpg?sw=400 1dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=600M0A45EE400C390-F.jpg?sw=600 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=8001M0A45EE400C390-F.jpg?sw=800dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=10001M0A45EE400C390-F.jpg?sw=100dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=120031M0A45EE400C390-F.jpg?sw=1200 5x" sizes="100px" alt="C390" />
+                                <span data-value="C390" class="sr-only js-wishlist-selected">
+                    selected
+                </span>
+                              </div>
+                              <div class="cc-right-content">
+                                <div class="js-add-to-wishlist-message cc-add-to-wishlist-text">
+                                </div>
+                                <div class="cc-show-wishlist">
+                                  <a href="zh-cn/wishlist.html">
+                        我的愿望清单
+                    </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="cc-pdp__stickymobile cc-clearfix js-remove-sticky">
+                      <div class="cc-content-attributes-sticky">
+
+                        <div class="cc-attribute-sticky" data-attr="color">
+
+                          <div class="cc-content-color-choice-sticky" aria-labelledby="selectColorSticky-dialog-heading" aria-describedby="selectColorSticky-dialog-description" role="dialog">
+                            <div class="cc-color-choice-button-sticky js-sticky-choice" data-target="#color-modal-sticky">
+                              <span class="cc-attribute-label color non-input-label">
+                                                            Цвет
+                                                        </span>
+                              <div class="cc-content-thumb-color-sticky">
+
+                                <img src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" alt="" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=200 100wdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=400r-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=400 200dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=600er-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=600 30dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=800ter-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=800 4dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1000ter-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1000 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1200ster-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1200 600w" sizes="36px" class="cc-image-sticky js-selected-color" />
+
+                              </div>
+                              <svg class="cc-icon" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#stroke-arrow-down"></use>
+                              </svg>
+                            </div>
+                            <div class="cc-color-choice-overlay-sticky" id="color-modal-sticky">
+                              <div class="cc-color-choice-overlay-container">
+                                <div class="cc-overlay-head">
+
+                                  <h2 class="cc-head-title" id="selectColorSticky-dialog-heading">可供颜色</h2>
+                                </div>
+                                <p class="sr-only" id="selectColorSticky-dialog-description">
+                                  在这个部分您可以选择颜色
+                                </p>
+                                <!-- Swatch Image Attribute Values -->
+                                <div class="cc-content-colors-choice-sticky">
+                                  <div class="cc-content-items cc-slider">
+
+                                    <div class="cc-slide">
+                                      <div class="cc-item">
+                                        <button type="button" class="js-color-choice cc-color-choice cc-active js-analytics-product-swatch" aria-label="选择 颜色 C390" aria-describedby="C390-sticky" data-attr-value="C390" data-url=" data-analyticscolor="Anthracite">
+
+                                          <img src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=200 100wdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=400/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=400 200dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=600-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=600 30dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=800/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=800 4dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1000/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1000 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1200c/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1200 600w" sizes="90px" class="cc-color-image" alt="" />
+
+                                          <span id="C390-sticky" class="sr-only">
+                                                                                            selected
+                                                                                        </span>
+                                          <span class="cc-color-text js-color-text ">钢灰色 (C390)</span>
+                                        </button>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <div class="cc-attribute-sticky" data-attr="size">
+
+                          <div class="cc-content-size-choice-sticky">
+                            <div class="cc-size-choice-button-sticky js-size-sticky js-sticky-choice" data-target="#size-modal-sticky">
+
+                              <span id="js-sticky-size-text-default" class="cc-text ">Цена</span>
+                              <span id="js-sticky-size-text-selected" class="cc-text hidden"></span>
+                              <svg class="cc-icon" aria-hidden="true" focusable="false">
+                                <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#stroke-arrow-down"></use>
+                              </svg>
+                            </div>
+                            <div class="cc-size-choice-overlay-sticky" id="size-modal-sticky" aria-labelledby="selectSize-stiky-dialog-heading" aria-describedby="selectSize-stiky-dialog-description" role="dialog">
+
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="cc-pdp__price cc-pdp__price--sticky js-prices">
+
+                        <div class="cc-price js-price" id="sr-231M0A45EE400-price">
+
+                          <span>
+    
+
+    
+    <span class="sales cc-sales">
+        
+        
+            <span class="value" content="9000.00">
+        
+        <span class="cc-price-text">325.000 сум</span>
+
+                          </span>
+
+                          </span>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="cc-pdp__add-to-cart">
+
+                      <div class="cc-addtocart-buttons  js-analytics-position" data-position="pdp">
+                        <input type="hidden" class="add-to-cart-url" value="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Cart-AddProduct" />
+                        <input type="hidden" class="js-master-pid" value="231M0A45EE400">
+                        <button id="mybutton" class="add-to-cart-btn" data-name="Бежевые штаны" data-price="325000" data-image="/pants-two-img/DSC01503.jpg" data-toggle="modal" data-target="#exampleModalCenter">
+                          Добавить в корзину
+                        </button>
+
+
+                      </div>
+
+                      <div class="cc-pdp__shipping-note cc-pdp__shipping-note--desktop">
+                        <svg class="cc-icon" aria-hidden="true" focusable="false">
+                          <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#package"></use>
+                        </svg>
+                        <p>Одежда подлежит обмену либо возврату, 100% суму при наличии заводского брака.</p>
+                      </div>
+                    </div>
+
+                    <div class="cc-disclaimer-shipment js-disclaimer-shipment d-none">
+
+                      <div class="content-asset">
+                        <!-- dwMarker="content" dwContentID="3352a730bca23e4385e3608c9b" -->
+                        <div class="cc-disclaimer-alert">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <title>alert</title>
+                            <path d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22Z" style="fill:#dd5550" />
+                            <rect x="11" y="6" width="2" height="8" style="fill:#dd5550" />
+                            <rect x="11" y="16" width="2" height="2" style="fill:#dd5550" />
+                          </svg>
+                        </div>
+                        <div class="cc-disclaimer-text">由于海关的检查，用于此项商品的特殊材料可能会导致运输迟缓。</div>
+                      </div>
+                      <!-- End content-asset -->
+
+                    </div>
+
+                    <div class="cc-tax-dogana">
+
+                      <div class="content-asset">
+                        <!-- dwMarker="content" dwContentID="233c501404eb0162b8c5afbef2" -->
+                        <span></span>
+                      </div>
+                      <!-- End content-asset -->
+
+                    </div>
+
+                    <div class="cc-pdp__resume-mobile">
+                      <div class="cc-pdp__resume-mobile__img">
+
+                        <img src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" alt="" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=200 100wdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=4006b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=400 200dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=60066b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=600 30dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=800466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=800 4dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1000466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1000 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1200e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1200 600w" sizes="36px" class="cc-image-sticky js-selected-color" />
+
+                      </div>
+
+                    <div class="cc-pdp__resume-mobile__cta">
+
+                      <div class="cc-content-button">
+                        <button class="cc-button js-newpdp-resume-addtocart" data-pid="231M0A45EE400" aria-label="ADD TO CART 镶珠装饰薄棉汗布T恤" data-disabled=true>
+                          <svg class="cc-icon" aria-hidden="true" focusable="false">
+                            <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#addtocart-sticky"></use>
+                          </svg>
+                        </button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cc-pdp__mobile-info">
+
+                  <h1 class="cc-pdp__title cc-pdp__title--mobile">Бежевые штаны из льна</h1>
+                </div>
+                <!-- asset disclaimer-shipment -->
+                <div class="cc-disclaimer-shipment-mobile js-disclaimer-shipment d-none">
+
+                  <div class="content-asset">
+                    <!-- dwMarker="content" dwContentID="3352a730bca23e4385e3608c9b" -->
+                    <div class="cc-disclaimer-alert">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <title>alert</title>
+                        <path d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22Z" style="fill:#dd5550" />
+                        <rect x="11" y="6" width="2" height="8" style="fill:#dd5550" />
+                        <rect x="11" y="16" width="2" height="2" style="fill:#dd5550" />
+                      </svg>
+                    </div>
+                    <div class="cc-disclaimer-text">由于海关的检查，用于此项商品的特殊材料可能会导致运输迟缓。</div>
+                  </div>
+                  <!-- End content-asset -->
+
+                </div>
+              </div>
+          </div>
+
+          <div class="cc-pdp__anchor" id="pdpdetails"></div>
+          <div class="cc-pdp__details">
+            <div class="cc-container cc-pdp__container-small">
+              <div class="cc-pdp__accordion__row">
+                <div class="cc-pdp__accordion__col cc-pdp__accordion__col--1">
+                  <div class="cc-pdp__accordion">
+                    <button class="cc-pdp__accordion__btn" type="button" data-toggle="collapse" data-target="#pdpAccordion1" aria-expanded="true" aria-controls="pdpAccordion1">
+                      Материал
+                    </button>
+                    <div class="cc-pdp__accordion__content show" id="pdpAccordion1">
+                      <div class="cc-pdp__accordion__content__wrp">
+
+                        <p class="cc-pdp__accordion__content__text">Идеальные базовые бежевые штаны из качественного льна облегают ваше тело с комфортом и стилем. Тщательно продуманные швы и долговечность обеспечивают надежность на протяжении многих лет. Этот вариант штанов идеально подходит как для повседневной носки, так и для особых случаев, придавая вашему образу утонченность и выразительность.</p>
+
+                      </div>
+                    </div>
+                    <div class="cc-pdp__accordion__border"></div>
+                  </div>
+                </div>
+                <div class="cc-pdp__accordion__col cc-pdp__accordion__col--2">
+                  <div class="cc-pdp__accordion">
+                    <button class="cc-pdp__accordion__btn collapsed" type="button" data-toggle="collapse" data-target="#pdpAccordion3" aria-expanded="false" aria-controls="pdpAccordion3">
+                      Детали
+                    </button>
+                    <div class="cc-pdp__accordion__content collapse" id="pdpAccordion3">
+                      <div class="cc-pdp__accordion__content__wrp">
+
+                        <p class="cc-pdp__accordion__content__text cc-pdp__accordion__content__text--prewrap">идеальная одежда для рекордной жары этого лета!
+                        </p>
+
+                        <!-- <p class="cc-pdp__accordion__content__text cc-pdp__accordion__content__text--prewrap">65% хлопок 5% лайкра 30% полиестер</p> -->
+
+                      </div>
+                    </div>
+                    <div class="cc-pdp__accordion__border"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </section>
+
+          <input type="hidden" id="urlRecommendations" value="/on/demandware.store/Sites-bc-cn-Site/zh_CN/Product-LoadRecommendations" />
+          <input type="hidden" id="standardRecommendationsTitle" value="为您推荐">
+          <section class="cc-product-recommendations js-product-recommendations d-none">
+            <div class="cc-container-small">
+              <h2 class="cc-recommendations-title">
+            
+                为您推荐
+            
+        </h2>
+            </div>
+
+            <div class="cc-background-products-container">
+              <div class="cc-background"></div>
+
+              <div class="js-recommendationTemplate"></div>
+
+            </div>
+          </section>
+
+          <!-- qui stampiamo la main region -->
+
+          <!-- qui stampiamo il banner -->
+
+          <div class="cc-pdp__desktop-sticky-addtocart">
+            <div class="content-sticky-add-to-cart">
+              <div class="cc-sticky-add-to-cart cc-clearfix js-sticky-add-to-cart">
+                <div class="cc-content-prod-title-sticky">
+                  <span class="cc-prod-title-sticky cc-title-mobile">Бежевые штаны из льна</span>
+                  <span class="cc-prod-title-sticky cc-title-desktop">汗布T恤</span>
+                  <span class="cc-prod-price-sticky js-prices">
+            
+            
+    <div class="cc-price js-price" id="sr-231M0A45EE400-price">
+        
+        <span>
+    
+
+    
+    <span class="sales cc-sales">
+        
+        
+        
+            <span class="value" content="9000.00">
+        
+        <span class="cc-price-text">&yen;9,000.00</span>
+
+                  </span>
+
+                  </span>
+
+                </div>
+
+                </span>
+              </div>
+              <div class="cc-content-other-info-sticky cc-clearfix">
+                <div class="cc-content-attributes-sticky">
+
+                  <div class="cc-attribute-sticky" data-attr="color">
+
+                    <div class="cc-content-color-choice-sticky" aria-labelledby="selectColorSticky-dialog-heading" aria-describedby="selectColorSticky-dialog-description" role="dialog">
+                      <div class="cc-color-choice-button-sticky js-sticky-choice" data-target="#color-modal-sticky">
+                        <span class="cc-attribute-label color non-input-label">
+                        Цвет
+                                </span>
+                        <div class="cc-content-thumb-color-sticky">
+
+                          <img src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" alt="" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200mages/large/season-231/231M0A45EE400C390-F.jpg?sw=200 100wdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=400images/large/season-231/231M0A45EE400C390-F.jpg?sw=400 200dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=600/images/large/season-231/231M0A45EE400C390-F.jpg?sw=600 30dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=8005/images/large/season-231/231M0A45EE400C390-F.jpg?sw=800 4dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=10005/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1000 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1200b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1200 600w" sizes="36px" class="cc-image-sticky js-selected-color" />
+
+                        </div>
+                        <svg class="cc-icon" aria-hidden="true" focusable="false">
+                          <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#stroke-arrow-down"></use>
+                        </svg>
+                      </div>
+                      <div class="cc-color-choice-overlay-sticky" id="color-modal-sticky">
+                        <div class="cc-color-choice-overlay-container">
+                          <div class="cc-overlay-head">
+
+                            <h2 class="cc-head-title" id="selectColorSticky-dialog-heading">可供颜色</h2>
+                          </div>
+                          <p class="sr-only" id="selectColorSticky-dialog-description">
+                            在这个部分您可以选择颜色
+                          </p>
+                          <!-- Swatch Image Attribute Values -->
+                          <div class="cc-content-colors-choice-sticky">
+                            <div class="cc-content-items cc-slider">
+
+                              <div class="cc-slide">
+                                <div class="cc-item">
+                                  <button type="button" class="js-color-choice cc-color-choice cc-active js-analytics-product-swatch" aria-label="选择 颜色 C390" aria-describedby="C390-sticky" data-attr-value="C390" data-url="" data-analyticscolor="Anthracite">
+
+                                    <img src="on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg" srcset="dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=200default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=200 100wdw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=400/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=400 200dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=600c/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=600 30dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=800bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=800 4dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1000bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1000 dw/image/v2/ABCP_PRD/on/demandware.static/-/Sites-catalog-master-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg%3Fsw=1200-bc/default/dw45e466b5/images/large/season-231/231M0A45EE400C390-F.jpg?sw=1200 600w" sizes="90px" class="cc-color-image" alt="" />
+
+                                    <span id="C390-sticky" class="sr-only">
+                                                                    selected
+                                                                </span>
+                                    <span class="cc-color-text js-color-text ">Белая футболка с боку carisma</span>
+                                  </button>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <span class="cc-prod-price-sticky-mobile js-prices">
+            
+            
+    <div class="cc-price js-price" id="sr-231M0A45EE400-price">
+        
+        <span>
+    
+
+    
+    <span class="sales cc-sales">
+        
+        
+        
+            <span class="value" content="9000.00">
+        
+        <span class="cc-price-text">179.000</span>
+
+                </span>
+
+                </span>
+
+              </div>
+
+              </span>
+
+              <div class="cc-content-addtocart-sticky js-sticky">
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cc-size-choice-overlay hidden" id="request-size-overlay-mob">
+        <div class="cc-overlay js-close"></div>
+        <div id="js-requestSize-product-overlay-mob" class="cc-size-choice-overlay-container cc-requestsize-only-mobile js-requestSize" aria-labelledby="requestSize-dialog-heading" aria-describedby="requestSize-dialog-description" role="dialog">
+        </div>
+      </div>
+
+      </div>
+
+      <script>
+        var language = 'zh';
+      </script>
+
+      <div class="content-asset">
+        <!-- dwMarker="content" dwContentID="c4bd16a088c6aafa49bb751630" -->
+        <style type='text/css'>
+          .embeddedServiceHelpButton .helpButton {
+            width: auto !important;
+            bottom: 16px;
+            right: 16px;
+          }
+          
+          .embeddedServiceHelpButton .helpButtonDisabled {
+            display: none !important;
+            visibility: hidden;
+          }
+          
+          .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #262626;
+            font-family: 'GTEesti', sans-serif;
+            font-weight: 300;
+            border-radius: 0;
+            min-width: 1px;
+            max-width: none;
+            padding: 0 20px 0 24px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 12px;
+            box-shadow: none;
+            -webkit-transition: all .15s ease-in;
+            -o-transition: all .15s ease-in;
+            transition: all .15s ease-in;
+          }
+          
+          .embeddedServiceHelpButton .helpButton .uiButton:hover {
+            background-color: #e5e5e5;
+            color: #262626;
+          }
+          
+          .embeddedServiceHelpButton .helpButton .uiButton:hover::before,
+          .embeddedServiceHelpButton .helpButton .uiButton:focus::before {
+            display: none;
+          }
+          
+          button[embeddedservice-chatheader_chatheader] svg {
+            max-width: 19px;
+          }
+        </style>
+
+      </div>
+      <!-- End content-asset -->
+
+      </div>
+
+      <div class="cc-experience-component">
+        <div class="experience-component experience-commerce_assets-38_overlayNewsletter">
+
+          <div class="cc-pd cc-pd-overlay-newsletter cc-pd-overlay-newsletter--image overlay-newsletter-1 cc-pd-overlay-newsletter--v-center cc-pd-overlay-newsletter--h-center cc-id-9203761" data-id="null" data-creative="38_overlayNewsletter">
+            <div class="cc-overlay-main">
+              <button class="cc-overlay-close js-pd-overlay-close">
+                <svg class="cc-close-icon" focusable="false" aria-hidden="true">
+                  <use xlink:href="/on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/images/sprite.svg#stroke-close"></use>
+                </svg>
+              </button>
+
+              <div class="cc-overlay-wrp">
+
+                <div class="cc-overlay-img">
+
+                </div>
+
+                <div class="cc-overlay-info">
+
+                  <span class="cc-overlay-title">
+                      
+                    </span>
+
+                  <span class="cc-overlay-description">
+                      
+                    </span>
+
+                  <div class="cc-overlay-form">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <footer id="NewsletterFormOption" class="cc-footer">
+        <div class="cc-footer-main">
+          <div class="js-lazyLoad-newsletter"></div>
+
+          <div class="cc-footer-items">
+            <div class="cc-footer-container">
+              <div class="row">
+                <div
+                  class="cc-footer-col col-12 order-4 order-sm-1 cc-nl-desktop-tablet"
+                >
+    
+                </div>
+              </div>
+              <div class="row">
+                <div class="cc-footer-col col-12 col-sm-3 order-1 order-sm-2">
+                  <div class="content-asset">
+                    <!-- dwMarker="content" dwContentID="946a6c0f1cd776264c18d79258" -->
+                    <div class="cc-col-title" data-id-footer-menu-item="1">
+                      <h2>
+                        <button
+                          aria-controls="sect-customer-care"
+                          id="accordion-customer-care-id"
+                          class="cc-col-title-button"
+                          aria-disabled="true"
+                          aria-expanded="true"
+                        >
+                          Страницы
+                        </button>
+                      </h2>
+                    </div>
+                    <div
+                      id="sect-customer-care"
+                      role="region"
+                      aria-labelledby="accordion-customer-care-id"
+                    >
+                      <ul class="cc-footer-links" data-id-footer-menu-item="1">
+                        <li class="cc-content-link">
+                          <a
+                            href="/index.html"
+                            class="cc-footer-link js-exclusive-service-footer"
+                            >Главная</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href="/about.html"
+                            class="cc-footer-link js-exclusive-service-footer"
+                            >О нас</a
+                          >
+                        </li>
+                        <!-- <li class="cc-content-link">
+            <a href="https://shop.brunellocucinelli.cn/en-cn/exclusive-service-appointment.html" class="cc-footer-link">Make an Appointment</a>
+        </li> -->
+                        <li class="cc-content-link">
+                          <a
+                            href="/yslovia.html"
+                            class="cc-footer-link"
+                            >Условия</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href=""
+                            class="cc-footer-link"
+                            >Магазин</a
+                          >
+                        </li>
+                    </li>
+                 
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- End content-asset -->
+                </div>
+                <div class="cc-footer-col col-12 col-sm-3 order-2 order-sm-3">
+                  <div class="content-asset">
+                    <!-- dwMarker="content" dwContentID="6c04514b4c22a575ffb979c6a3" -->
+                    <div class="cc-col-title" data-id-footer-menu-item="2">
+                      <h2>
+                        <button
+                          aria-controls="sect-philosophy"
+                          id="accordion-philosophy-id"
+                          class="cc-col-title-button"
+                          aria-disabled="true"
+                          aria-expanded="true"
+                        >
+                          Carisma
+                        </button>
+                      </h2>
+                    </div>
+                    <div
+                      id="sect-philosophy"
+                      role="region"
+                      aria-labelledby="accordion-philosophy-id"
+                    >
+                      <ul class="cc-footer-links" data-id-footer-menu-item="2">
+                        <li class="cc-content-link">
+                          <a
+                            href="/Carisma-clasics.html"
+                            class="cc-footer-link"
+                            target="_blank"
+                            >
+                            Carisma classics</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href="/casual.html"
+                            class="cc-footer-link"
+                            target="_blank"
+                            >Carisma casual </a
+                          >
+                        </li>
+    
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- End content-asset -->
+                </div>
+                <div class="cc-footer-col col-12 col-sm-3 order-3 order-sm-4">
+                  <div class="content-asset">
+                    <!-- dwMarker="content" dwContentID="6d194ec900455e6ceac021a1fe" -->
+                    <div class="cc-col-title" data-id-footer-menu-item="3">
+                      <h2>
+                        <button
+                          aria-controls="sect-gen-info"
+                          id="accordion-gen-info-id"
+                          class="cc-col-title-button"
+                          aria-disabled="true"
+                          aria-expanded="true"
+                        >
+                          Соц сети
+                        </button>
+                      </h2>
+                    </div>
+                    <div
+                      id="sect-gen-info"
+                      role="region"
+                      aria-labelledby="accordion-gen-info-id"
+                    >
+                      <ul class="cc-footer-links" data-id-footer-menu-item="3">
+                        <li class="cc-content-link">
+                          <a
+                            href="https://t.me/shomukhidov"
+                            class="cc-footer-link"
+                            >Telegram</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href="https://instagram.com/carisma.uz?igshid=MzRlODBiNWFlZA=="
+                            class="cc-footer-link"
+                            >Instagram</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href="https://www.tiktok.com/@carisma.uz?_t=8eDnKTbyGcz&_r=1"
+                            class="cc-footer-link"
+                            >Tik Tok</a
+                          >
+                        </li>
+                        <li class="cc-content-link">
+                          <a
+                            href="tel:+998909908454"
+                            class="cc-footer-link"
+                            >+998909908454</a
+                          >
+                        </li>
+                       
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- End content-asset -->
+                </div>
+  
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cc-footer-bottom">
+
+        </div>
+      </footer>
+
+      </div>
+    
+      <div class="error-messaging"></div>
+      <div class="modal-background"></div>
+
+      <span class="api-true  tracking-consent" data-caOnline="false" data-url="/on/demandware.store/Sites-bc-cn-Site/zh_CN/ConsentTracking-GetContent?cid=tracking_hint" data-reject="/on/demandware.store/Sites-bc-cn-Site/zh_CN/ConsentTracking-SetSession?consent=false" data-accept="/on/demandware.store/Sites-bc-cn-Site/zh_CN/ConsentTracking-SetSession?consent=true" data-acceptText="是" data-rejectText="否" data-heading="追踪同意书"></span>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
+      <script src="/carisma.js"></script>
+      <script type="text/javascript">
+        //<!--
+        /* <![CDATA[ */
+        function trackPage() {
+          try {
+            var trackingUrl = "";
+            var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+            if (typeof dw.ac == "undefined") {
+              dwAnalytics.trackPageView();
+            } else {
+              dw.ac.setDWAnalytics(dwAnalytics);
+            }
+          } catch (err) {};
+        }
+        /* ]]> */
+        // -->
+      </script>
+      <link rel="stylesheet" href="styles.css">
+      <script src="scripts.js"></script>
+      <link rel="stylesheet" href="styles.css?v=123">
+      <script src="scripts.js?v=456"></script>
+      <script type="text/javascript">
+        //<!--
+        /* <![CDATA[ */
+        function trackPage() {
+          try {
+            var trackingUrl = "";
+            var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+            if (typeof dw.ac == "undefined") {
+              dwAnalytics.trackPageView();
+            } else {
+              dw.ac.setDWAnalytics(dwAnalytics);
+            }
+          } catch (err) {};
+        }
+        /* ]]> */
+        // -->
+      </script>
+      <script type="text/javascript" src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()"></script>
+      <!-- Demandware Active Data (body_end-active_data.js) -->
+      <script src="on/demandware.static/Sites-bc-cn-Site/-/zh_CN/v1684119937683/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script>
+      <!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
+      <script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
+</body>
+
+</html>
